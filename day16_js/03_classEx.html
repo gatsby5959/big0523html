@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체로 계좌현황 체크
+        let myAccount = {
+            name : 'hong',
+            balance : 0, //잔액
+            //입금
+            deposit: function(amount){
+                this.balance += amount;
+            },
+            //출금
+            withdraw : function(amount){
+                this.balance -= amount;
+            },
+            //이체
+            transfer : function(amount, otherAccount){
+                this.balance -= amount;
+                otherAccount.balance += amount;
+            }
+        }
+
+        let yourAccount = {
+            name : 'kim',
+            balance : 1000, //잔액
+            //입금
+            deposit: function(amount){
+                this.balance += amount;
+            },
+            //출금
+            withdraw : function(amount){
+                this.balance -= amount;
+            },
+            //이체
+            transfer : function(amount, otherAccount){
+                this.balance -= amount;
+                otherAccount.balance += amount;
+            }
+        }
+
+        //내 계좌에 입금 상황
+        console.log(myAccount.name,":",myAccount.balance);
+        myAccount.deposit(5000);
+        console.log(myAccount.name,":",myAccount.balance);
+
+        //출금 상황
+        myAccount.withdraw(1000);
+        console.log(myAccount.name,":",myAccount.balance);
+
+
+        //이체
+        myAccount.transfer(2000, yourAccount);
+        console.log(myAccount.name,":",myAccount.balance);
+        console.log(yourAccount.name,":",yourAccount.balance);
+
+
+        //펑션빼고 매서드로? 적으라고?? 객체에서는
+
+        //클래스에서는 메서드로 정의??  펑션만 없애면됨...
+
+    </script>
+    <script>
+        class MyAccount2{
+        //자바 스크립트에서는 생성자는 1개만 허용
+        constructor(name, balance){
+            this.name = name;
+            this.balance = balance;
+        }
+            deposit(amount){
+                this.balance += amount;
+            }
+            //출금
+            withdraw(amount){
+                this.balance -= amount;
+            }
+            //이체
+            transfer(amount, otherAccount){
+                this.balance -= amount;
+                otherAccount.balance += amount;
+            }
+    }
+
+    //     class YourAccount2{
+    //     //자바 스크립트에서는 생성자는 1개만 허용
+    //     constructor(name, balance){
+    //         this.name = name;
+    //         this.balance = balance;
+    //     }
+    //         deposit(amount){
+    //             this.balance += amount;
+    //         }
+    //         //출금
+    //         withdraw(amount){
+    //             this.balance -= amount;
+    //         }
+    //         //이체
+    //         transfer(amount, otherAccount){
+    //             this.balance -= amount;
+    //             otherAccount.balance += amount;
+    //         }
+    // }
+    let kk = new MyAccount2('KKKK', 1000);
+    let yy = new MyAccount2('YYYY', 1000);
+    console.log(kk.name,":",kk.balance);
+    kk.deposit(5000);
+    console.log(kk.name,":",kk.balance);
+    kk.transfer(100, yy);
+    console.log(yy.name,":",yy.balance);
+    
+    </script>
+
+
+</body>
+</html>

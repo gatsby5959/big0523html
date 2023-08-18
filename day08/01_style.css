@@ -1,0 +1,72 @@
+@import url(reset.css);
+.container{
+    /* % 는 부모가 기준 */
+    width: 100%;
+    /* vh : 모니터(브라우저) 높이 기준 *//* 전체부라우저를 감짜려고*/
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(/image/room.jpg);
+    background-size: cover;
+}
+.container .header{
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex; /*블록요소들을 좀 편하게 쓸수 있게 해줌*//*내가 플렉스가 아니라 내 아래 자식을 배치하기 쉽게 플렉스 주겠다*/
+    justify-content: space-between; /*어떻게 정렬할래? : 양쪽으로 갈라(space-between)*/
+    padding-top: 20px;
+}
+.container .header h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+.container .header .nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+.container .header .nav ul li{
+    margin: 0 10px;
+}
+.container .header .nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+.container .header .nav ul li a:hover{
+    background-color: brown;
+}
+.container .main{
+    /* 전체 브라우저의 정 가운데 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.container .main h2{
+    font-size: 50px;
+    font-weight:  700;
+    margin-bottom: 20px;
+}
+
+.container .main button{
+    background-color: transparent;
+    border:  2px solid green;
+    color: aliceblue;
+    font-weight: 700;
+    padding: 15px 20px;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 1.5s;
+}
+.container .main button:hover{
+    background-color: rgb(80, 252, 80);
+    color: black;
+}
+

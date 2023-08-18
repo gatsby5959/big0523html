@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 연습</title>
+     <style>
+        .outer{
+            height: 150px;
+            background-color: antiquewhite;
+            position: relative;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .inner:nth-child(1){
+            background-color: brown;
+            top: 25px;
+            left: 20px;
+        }
+        /* 중심축중심으로 살짝 왼쪽으로 옮김 그래야 전체적 중간임 */
+        .inner:nth-child(2){
+            background-color: yellowgreen;
+            top: 25px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .inner:nth-child(3){
+            background-color: aqua;
+            top: 25px;
+            right: 20px;
+        }
+        .p-box{
+            width: 500px;
+            height: 500px;
+            background-color: beige;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: blue;
+            transform: translate(-90%,-90%);
+
+        }
+
+     </style>
+</head>
+
+<body id="top">
+
+    <div class="fixed">
+        <a href="#top">top</a>
+    </div>
+
+    
+    <div class="outer">
+        <div class="inner">
+            inner div1
+        </div>
+        <div class="inner">
+            inner div2
+        </div>
+        <div class="inner">
+            inner div3
+        </div>
+        <div class="box">
+            inner divbox
+        </div>
+    </div>
+
+</body>
+</html>

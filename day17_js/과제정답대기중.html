@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myH1 {
+            font-size: 72px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+
+        #myH3 {
+            text-align: center;
+        }
+        #section {
+            display: flex;
+            justify-content: space-between;
+        }
+        .character-info {
+            width: 30%;
+        }
+        .character-name {
+            font-style: italic;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="myH1"></h1>   
+<h3 id="myH3"></h3>   
+
+<section id="section"></section>
+
+<script>
+  let h1 = document.querySelector('#myH1');
+  let h3 = document.querySelector('#myH3');
+  let section = document.querySelector('#section');
+
+  fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+  .then(res => res.json())
+  .then(data => {
+    h1.textContent = data.squadName;
+    h3.textContent = 'Hometown: ' + data.homeTown + ' // Formed: ' + data.formed;
+
+    data.members.forEach(member => {
+      let nameParts = member.name.split(' '); // name ' '으로 분리
+      let nameHTML = nameParts.join('<br>'); // 분리된 부분<br> 태그 추가
+      let powersList = member.powers.map(power => `<li>${power}</li>`).join('');
+      section.innerHTML += `
+        <div class="character-info">
+          <h2 class="character-name">${nameHTML}</h2> <!-- 수정된 nameHTML 사용 -->
+          <p>Secret identity: ${member.secretIdentity}</p>
+          <p>Age: ${member.age}</p>
+          <p>Superpowers:</p>
+          <ul>${powersList}</ul>
+        </div>
+      `;
+    });
+  });
+</script>
+</body>
+</html>

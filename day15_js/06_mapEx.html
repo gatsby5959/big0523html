@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 버튼 2개 생성
+        과목, 점수
+        추가버튼 => map추가  ?           맵에 넣고 뺴는 것입니당?
+        출력버튼 => map을 출력   ul=>li로 출력              에드 이벤트 리스터?
+        결과버튼 => 합계 , 평균, 평가(80이상이면 통과, 아니면 탈락) = h3           에드이벤트 리스너?
+     -->
+     <input type="text" id ="subj" placeholder="과목명자리">
+     <input type="text" id ="score" placeholder="점수자리">
+     <div>
+        <button type="button" id =  'add_btn'>[과목,점수] 추가 버튼</button>
+        <button type="button" id =  'print_btn'>[과목,점수]출력 버튼 </button>
+        <button type="button" id =  'result_btn'>결과 버튼(80이상만통과)</button>
+    </div>
+    <ol id = "ol">
+
+    </ol>
+    <h3 id = 'h3'>
+
+    </h3>
+
+    <script>
+        let count = 0;
+        let olol = document.getElementById('ol');    //ol태그의 객체가 리턴
+         const  myMap = new Map(); 
+         function addsubj(){
+            let userInput = document.getElementById(`subj`);
+            return userInput;
+        }
+        function addscore(){
+            let userInput = document.getElementById(`score`);
+            return userInput;
+        }
+
+         document.getElementById('add_btn').addEventListener('click', function(){
+            // myMap.set('html',85);
+            // myMap.set('css',87);
+            // myMap.set('js',96);
+            let adsub = '';
+            let adsco  = 0;
+
+            adsub = addsubj().value;
+            adsco  = addscore().value;
+
+            // console.log(adsub);
+            // console.log(adsco);
+
+            myMap.set(adsub,adsco);
+            // console.log(myMap);
+            count++;
+        })
+
+        document.getElementById('print_btn').addEventListener('click', function(){
+            console.log('눌리니?');
+            // let ol_li = `<li>`;
+            //     ol_li += `나오나? 테스트중`;
+            //     ol_li += `</li>`;
+        let ol_li = ``;
+        myMap.forEach(function(v,i,s){  //벨류 인덱스 셀프
+            console.log(i,v,s); //인덱스 벨류 셀프
+                ol_li += `<li>`;
+                ol_li += `${i} ${v}`;  //백틱은 문자다!!! 
+                ol_li += `</li>`;
+        })
+            olol.innerHTML =  ol_li;
+        })
+
+
+        document.getElementById('result_btn').addEventListener('click', function(){
+            // console.log('눌리니2??????????????');
+            let sum = 0;  //이렇게 해도 아래서 문자를 받으면 강제로 문자로 형변환됨... 
+         myMap.forEach(function(v,i,s){  //벨류 인덱스 셀프
+         
+             
+                sum += Number(v);  //이렇게 해야 숫자로 받은 백틱으로 하면 중간에 아라서 문자형응로 변환됨
+
+                console.log(sum,typeof(sum));
+
+                console.log(sum);
+                if((sum/count)>80){
+
+                    h3.innerHTML='평균 80이상 통과'
+                }else{
+            
+                    h3.innerHTML='평균 80점 미만 미통과'
+                }
+             
+         })
+         
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

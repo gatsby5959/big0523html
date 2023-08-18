@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터리스트</title>
+    <style>
+        td{
+            border: 1px solid black;
+            text-align: center;
+            width: 200px;
+            height: 100px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+    </script>
+    <h3>데이터리스트</h3>
+        <ol>
+            <li>이름</li>
+            <li>거주지</li>
+            <li>좋아하는 리스트
+                <ul>
+                    <li>1. ?</li>
+                    <li>2. ?</li>
+                    <li>3. ?</li>
+                </ul>
+            </li>
+            <li>이메일</li>
+            <li>pet 소유 여부</li>
+            <li>지금 가장 원하는 것</li>
+        </ol>
+    <h3>리스트의 구조에 따라 자바스크립트 객체를 만들어보자</h3>
+    <!--입력받을  input 구조생성-->
+    <!-- 값 받아서  채워넣기 -->
+    <script>
+        const dataObj = {
+            name:"",
+            addr:"",
+            favors:{
+                favor1:"",
+                favor2:"",
+                favor3:"",
+            },
+            email:"",
+            pet:"",
+            wanna:""
+        };
+
+        // 위 html에서 받은 값을 객체에 저장 후 콘솔에 출력
+        // let 변수명;
+        // 변수명 = 값;
+        // 버튼누르면 객체가 쏙? 들어가게
+        function getDatas(){
+            let name = document.getElementById('name').value;
+            console.log(name);
+            let addr = document.getElementById('addr').value;
+            console.log(addr);
+
+            let favor1 = document.getElementById('favor1').value;
+            console.log(favor1);
+            let favor2 = document.getElementById('favor2').value;
+            console.log(favor2);
+            let favor3 = document.getElementById('favor3').value;
+            console.log(favor3);
+            let email = document.getElementById('email').value;
+            console.log(email);
+            let pet = document.getElementById('pet').value;
+            console.log(pet);
+            let wanna = document.getElementById('wanna').value;
+            console.log(wanna);
+
+
+ 
+            dataObj["name"] = name;
+            console.log(dataObj.name);
+            dataObj["addr"] = addr;
+            console.log(dataObj.addr);
+            dataObj["favors"]["favor1"] = favor1;
+            console.log(dataObj.favors.favor1);
+            dataObj["favors"]["favor2"] = favor2;
+            console.log(dataObj.favors.favor2);
+            dataObj["favors"]["favor3"] = favor3;
+            console.log(dataObj.favors.favor3);
+            dataObj["email"] = email;
+            console.log(dataObj.email);
+            dataObj["pet"] = pet;
+            console.log(dataObj.pet);
+            dataObj["wanna"] = wanna;
+            console.log(dataObj.wanna);
+        }
+
+
+        function showDatas() {
+
+            tname.innerText = dataObj.name;
+
+            taddr.innerText = dataObj.addr;
+
+           
+            //li 태그로 출력
+            let ol = document.getElementById('tlist');
+            ol.innerHTML =`<li>${dataObj.favors.favor1}</li>`;
+            ol.innerHTML +=`<li>${dataObj.favors.favor2}</li>`;
+            ol.innerHTML +=`<li>${dataObj.favors.favor3}</li>`;
+        
+            temail.innerText = dataObj.email;
+
+            tpet.innerText = dataObj.pet;
+
+            twanna.innerText = dataObj.wanna;
+            
+        }
+
+
+        
+    </script>
+
+
+    <form action = "">
+        <fieldset>
+            <legend>입력창</legend>
+            이름 : <input type="text" id = "name"> <br>
+            거주지 : <input type ="text" id = "addr"><br>
+            취미1 : <input type ="text" id = "favor1"><br>
+            취미2 : <input type ="text" id = "favor2"><br>
+            취미3 : <input type ="text" id = "favor3"><br>
+            이메일 : <input type ="text" id = "email"><br>
+            pet 소유 여부 : <input type ="text" id = "pet"><br>
+            지금 가장 원하는 것 : <input type ="text" id = "wanna"><br>
+            <button type="button" onclick="getDatas()">콘솔에 보이도록 하고 객체에 넣기</button>
+            <button type="button" onclick="showDatas()">객체의 값 모니터로 출력하기</button>
+        </fieldset>
+    </form>
+
+
+    <table>
+        <tr>
+            <td >이름</td>
+            <td id="tname"></td>
+        </tr>
+        <tr>
+            <td>거주지</td>
+            <td id="taddr"></td>
+        </tr>
+        <tr>
+            <td>좋아하는 리스트</td>
+            <td>
+                <ul id="tlist">
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td id="temail"></td>
+        </tr>
+        <tr>
+            <td>펫 소유 여부</td>
+            <td id="tpet"></td>
+        </tr>
+        <tr>
+            <td>지금 가장 원하는 것</td>
+            <td id="twanna"></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

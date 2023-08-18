@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #myh1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        div{
+            text-align: center;
+        }
+
+        .div0{
+            height: 70px;
+            /* width: 750px; */
+            background-color: rgb(26, 238, 192);
+            border-radius: 1px;
+            padding-top: 20px;   
+            
+            
+        }
+
+        .button1{
+            margin: auto;
+            text-align: center;
+            color: black;
+            font-size: 15px;
+            width: 50px;
+            height: 30px;
+            background-size: 300px 250px;
+            border-radius: 1px 1px 1px 1px; 
+            background-color : rgb(238, 238, 238);   
+            border: none;
+            
+            cursor: pointer;
+        }
+
+        .inputbox1{
+            width: 600px; /*일단 억지로 늘림*/
+            height: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 7px;
+            outline: none;  /*클릭해씅ㄹ떄 까만선이고....*/
+            border: none;   /*이거는 기본 클릭 안해도 보이는 보더 = 테두리*/
+        }
+
+        ul{
+         list-style:none;
+        }
+
+        .div00cl{
+            width: 700px;
+            /* 공식 시작 ---화면의 정중앙에 위치하기 위한 공식 포지션 앱솔루트  */
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform:  translate(-50%, -50%);
+            /* 공식 끝 ---*/
+            /* border: 1px solid black; */
+            background-color: aliceblue;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px
+
+        }
+
+     /*  1.값을 추가하는 메서드? 배열에 푸쉬하는것에서 끝내야함
+         2.배열을 전체 탐색해서 화면에 뿌리는 메서드?
+         3. 삭제하면 배열에서만 삭제하면 됨 삭제하고서 또 푸리면 됨
+         어쩃든 이렇게 할 예정...  style="border:0 solid black;"*/
+
+    
+    </style>
+</head>
+<body>
+    <h1 id = 'myh1'>
+        여행 준비물 점검 목록
+    </h1>
+    <div id = 'div00id' class="div00cl">
+    
+    <form action="">
+        <div class="div0">
+            <input class="inputbox1" type="text" id="inputbox1id"   required >
+            <button type="button" class="button1" id="btn1">추가</button>   
+        </div>
+    </form>
+    
+    <div>
+        <ul id ="itemList">
+            <li id = "list0">
+                예시동작중0
+                <span class="close" id = "sp0">
+                </span>
+            </li>
+            <li id = "list1">
+                예시동작중1
+                <span class="close" id = "sp1">
+                </span>
+            </li>
+            <li id = "list2">
+                예시동작중2
+                <span class="close" id = "sp1">
+                </span>
+            </li>
+        </ul>
+    </div>
+    </div>
+    
+    <script>
+        document.getElementById('btn1').onclick = () =>{
+           let val = document.getElementById('inputbox1id');
+           console.log(val.value);
+        }
+    </script>
+</body>
+</html>

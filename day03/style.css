@@ -1,0 +1,75 @@
+
+.tra{
+    width: 150px;
+    margin: 40px auto;
+    text-align: center;
+    border: 5px solid black;
+    /* margin: 10px auto 30px; */
+}
+
+.u{
+    text-align: center;
+}
+
+ul>li{
+    font-size: 20px;
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+}
+
+ul>li>a{
+    font-size: 20px;
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+    text-decoration : none; 
+}
+
+ul>li:hover{
+    color: red;
+}
+
+
+img{
+    display: block;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 150px; */
+    /*margin : 위아래px  좌우px*/
+    /*margin : 위 오른쪽 아래 왼쪽 */
+    /*margin : 위 아래 양옆에 */
+}
+
+.i{
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto;
+    width: 150px; */
+}
+/* ul>li:first-child {
+    font-weight: 700;
+} */
+.home-page ul>li:first-child {
+    font-weight: 700;
+}
+
+.seoul-page ul>li:nth-child(2) {
+    font-weight: 700;
+}
+
+.tokyo-page ul>li:nth-child(3) {
+    font-weight: 700;
+}
+
+.paris-page ul>li:nth-child(4) {
+    font-weight: 700;
+}
+
+
+
+
+
+
+

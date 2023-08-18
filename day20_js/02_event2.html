@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body{
+            background-color: lightblue;
+      
+        
+        }
+
+        .icon{
+            /*바디에 주면 안됨 바디에 주면 아이톤이 안움직임 아이콘에 정 중앙 공식을 줘야함*/
+            /*아이콘 클래스에 줘도 화면 중앙에는 옴*/
+            /*정중앙공식*/    
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:  translate(-50%, -50%);
+        }
+
+
+        .material-symbols-outlined{
+            font-size: 50px;
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <span class="material-symbols-outlined">emoji_nature</span>
+    </div>
+    <script>
+        document.addEventListener('mousemove', (e)=>{
+            console.log(e);
+            let icon = document.querySelector('.icon');
+        
+            icon.style.left = e.pageX+'px';
+            icon.style.top = e.pageY+'px';
+
+        })
+    </script>
+</body>
+</html>

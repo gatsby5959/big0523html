@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 Grid과제</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            width: 100%;
+        }
+        .header{
+            height: 60px;
+            background-color: aqua;
+        }
+        .main-img{
+            height: 300px;
+            background-color: yellow;
+        }
+        .subject{
+            height: 350px;
+            background-color: blanchedalmond;
+        }
+        .content{
+            height: 500px;
+            background-color: azure;
+        }
+        .sub{
+            height: 200px;
+            background-color: brown;
+        }
+        .sub2{
+            height: 200px;
+            background-color: gray;
+        }
+        .sub3{
+            height: 200px;
+            background-color: black;
+        }
+        .sub4{
+            /* height: 200px; */
+            background-color: yellowgreen;
+        }
+        .sub5{
+            /* height: 200px; */
+            background-color: blue;
+        }
+        .footer{
+            height: 200px;
+            background-color: blueviolet;
+            font-size: 150px;
+            text-align: center;
+        }
+        /*
+        man-width : 넓은 화면 기준 스타일링(웹 화면 스타일링) ~까지
+        mix-width : 좁은 화면 기준 스타일링(폰화면 스타일링) ~부터
+        */
+        @media screen and (min-width:800px){/*800이하가 이거 */
+            .header{
+                height:  60px;
+                font-size: 20px;
+            }
+            .main-img{
+                height:  550px;
+               
+                
+            }
+            /* .subject{
+                height: 350px;
+        
+            } */
+            .content{
+                width: 50%;
+                height: 400px;
+                float: left
+            }
+            .sub{
+                width: 50%;
+                height: 400px;
+                float: right
+            }
+            .footer{
+            
+            height: 50px;
+            background-color: blueviolet;
+            font-size: 30px;
+            text-align: center;
+                clear: both;
+            }
+        }
+        @media screen and (min-width:1300px){
+            .header{
+                height: 60px;
+                font-size: 60px;
+            }
+            .main-img{
+                height: 550px;
+            }
+            .subject{
+                width:50%;
+                height: 400px;
+                float: left;
+            }
+            .content{
+                width: 50%;
+                height: 200px;
+                float: right;
+            }
+            .sub{
+                width: 50%;
+                height: 200px;
+                float: right;
+            }
+            .sub2{
+                width: 50%;
+                height: 100%;
+                float: left;
+            }
+            .sub3{
+                width: 50%;
+                height: 50%;
+                float: right;
+            }
+            .sub4{
+                width: 100%;
+                height: 100%;
+                float: right;
+            }
+            .sub5{
+                width: 50%;
+                height: 50%;
+                float: right;
+            }
+            .footer{
+                height: 200px;
+                clear: both;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">IN'O </div>
+    <div class="main-img">
+        <img src="/image/mainpictur.png" alt="메인가전사진없음" height="100%" width="100%"> </div>
+    <div class="subject">
+        <img src="/image/moniter.png" alt="모니터사진없음" height="100%" width="100%"> </div>
+    </div>
+    <div class="content">
+        Portfolio<br>
+
+        Make Hardware Soft<br>
+
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also<br>
+    </div>
+    <div class="sub"> 
+        <div class="sub2"> 
+            <img src="/image/noteb1.png" alt="노트북사진없음" height="100%" width="100%"> </div>
+            <div class="sub3">
+                <!-- <img src="/image/mouse.png" alt="마우스사진없음" height="100%" width="100%"> </div> -->
+                <div class="sub4">
+                    <img src="/image/keyboard.png" alt="키보드사진없음" height="100%" width="100%">
+                </div>
+                </div>
+                <div class="sub5">
+                    <img src="/image/mouse.png" alt="마우스사진없음" height="100%" width="100%" >
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer"> 푸터 </div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import url(reset.css);
+a { text-decoration: none; color: black; width: 260;}
+.products a { text-decoration: none; color: black; width: 250; height: 250;}
+/* img {width: 200px; height: 200px;  margin-left: 40px; margin-right: 40; margin-top: 10; margin-bottom: 10;} */
+.products a img{ 
+    width: 500px; height: 400px; margin-left: 30px; margin-right: 30px; margin-top: 70px;
+}
+.navbar{
+    width: 95%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex; /*블록요소들을 좀 편하게 쓸수 있게 해줌*//*내가 플렉스가 아니라 내 아래 자식을 배치하기 쉽게 플렉스 주겠다*/
+    justify-content: space-between; /*어떻게 정렬할래? : 양쪽으로 갈라(space-between)*/
+    padding-top: 20px;
+    font-weight: 800; /*두껍게*/
+    color: black;
+    font-size: 30px;
+    border: none;
+    text-decoration: none
+}
+
+.navbar ul{ /*요래야 오른쪽으로 차차차작 붙음 안하면 위아래로 쌓임 */
+    justify-content: space-between;
+    width: 200px;
+    display: flex;
+}
+
+.navbar ul li{ /*이거 안하면 옆으로 쫘아아아악 다 붙음 적당히 띄기*/
+    margin: 0 0px 0 0px;
+    font-weight: 800; /*두껍게*/
+    color: black;
+    font-size: 15px;
+    text-decoration: none
+    
+}
+
+.main-img{
+    /* 전체 브라우저의 정 가운데 */
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 50%; */
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    color: black;
+    background-color: black;
+    margin-bottom: 100px;
+   
+}
+
+.products{
+    background-color: white;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+h1{
+    text-align: center;
+    font-weight: 800; /*두껍게*/
+    color: black;
+    margin-bottom: 200px;
+    font-size: 30px;
+}
+
+
+.products ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.products ul li{
+    margin: 0 10px;
+    /* flex-direction: column; */
+    /* display: flex; */
+    text-align: center;
+}
+
+
+.footer{
+    margin-top: 300px;
+    text-align: center;
+}
+
+
+/* .li_bigsale{
+    position: absolute;
+    height: 100px;
+    width: 500px; 
+    
+
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px
+
+} */
+
+
+.xxxx{
+    display: none;
+    position: absolute;
+    color: rgb(255, 0, 0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    
+}
+.products a{
+    position: relative;
+}
+.products>a img:hover ~ .xxxx{
+    display: block;
+}
+

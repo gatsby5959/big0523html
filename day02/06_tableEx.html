@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2" width = "85%">
+        <!-- <caption>게시판</caption> -->
+        <!-- <thead>
+            <tr>
+                <th width="10%">번호</th>
+                <th width="50%">내용</th>
+                <th width="15%">작성자</th>
+                <th width="20%">작성일</th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <td colspan="3">회원가입 | Member Private Information 약관동의 실명확인 회원가입 정보수정</td>
+            </tr>
+            <tr>
+                <td colspan="3">기본정보 입력 | 표시는 필수 항목이므로 반드시 입력해야 합니다.</td>
+            </tr>
+            <tr>
+                <td width="20%">아이디</td>
+                <td colspan="2"><input type="text" placeholder=""   ><button>중복검색</button>영문</td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td colspan="2"><input type="text" placeholder=""   >->재확인<input type="text" placeholder=""   ></td>
+            </tr>
+            <tr>
+                <td>비밀번호 힌트</td>
+                <td colspan="2"><input type="text" placeholder=""> 비번분실-조회시 참고할 내용</td>
+            </tr>
+            <tr>
+                <td>이름(본명)</td>
+                <td colspan="2"><input type="text" placeholder="">->한글</td>
+            </tr>
+            <tr>
+                <td>닉네임(별명)</td>
+                <td colspan="2"><input type="text" placeholder=""> <button>중복검색</button>한글,영문</td>
+            </tr>
+            <tr>
+                <td>전자메일주소</td>
+                <td><input type="text" placeholder="" ></td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailopen"> 비공개
+                    </form> 
+                </td>
+            </tr>
+            <tr>
+                <td>생년월</td>
+                <td>
+                    <form action="">
+                        <select name="year" id="year">
+                            <option value="">년</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                        <select name="m" id="m">
+                            <option value="">월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select name="d" id="d">
+                            <option value="">일</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                        </select>
+                        <form action="">
+                            <label for="male">음  </label>
+                            <input type="radio" name ="gender" id = "male" value ="male">
+                            <label for="female">양  </label>
+                            <input type="radio" name ="gender" id = "female" value ="female" checked>
+                        </form>
+                     </form>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailopen"> 비공개
+                    </form> 
+                </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>                        
+                    <form action="">
+                    <label for="male">남자  </label>
+                    <input type="radio" name ="gender" id = "male" value ="male">
+                    <label for="female">여자  </label>
+                    <input type="radio" name ="gender" id = "female" value ="female" >
+                </form>
+                </td>
+                <td>                 <form action="">
+                    <input type="checkbox" name="emailopen" disabled> 비공개
+                </form> 
+                </td>
+            </tr>
+            <tr>
+                <td>우편번호</td>
+                <td colspan="2"><input type="text" placeholder="">-<input type="text" placeholder=""><button>찾아보기</button></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" placeholder=""><br><input type="text" placeholder=""><-나머지 주소</td>
+                <td><input type="checkbox" name="emailopen" checked> 비공개</td>
+            </tr>
+            <tr>
+                <td>일반전화 번호</td>
+                <td>
+                    <form action="">
+                    <select name="year" id="year">
+                        <option value="">국번</option>
+                        <option value="032">032</option>
+                        <option value="02">02</option>
+                        <option value="031">031</option>
+                        <option value="064">064</option>
+                    </select>
+                    -<input type="text" placeholder="">-<input type="text" placeholder="">
+                </form>
+                </td>
+                <td><input type="checkbox" name="emailopen" checked> 비공개</td>
+            </tr>
+            <tr>
+                <td>휴대전화 번호</td>
+                <td>
+                    <form action="">
+                    <select name="year" id="year">
+                        <option value="">국번</option>
+                        <option value="032">032</option>
+                        <option value="02">02</option>
+                        <option value="031">031</option>
+                        <option value="064">064</option>
+                    </select>
+                    -<input type="text" placeholder="">-<input type="text" placeholder="">
+                    </form>
+                </td>
+                <td><input type="checkbox" name="emailopen" checked> 비공개</td>
+            </tr>
+            <tr>
+                <td>홈페이지</td>
+                <td>
+                    <input type="text" name="" id="" value="http://">
+                </td>
+                <td><input type="checkbox" name="emailopen" > 비공개</td>
+            </tr>
+            <tr>
+                <td>소개,인사말</td>
+                <td colspan="2">
+                    <textarea name="" id="" cols="30" rows="5" placeholder="반갑습니다."></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">추가정보 입력</td>
+            </tr>
+            <tr>
+                <td>사진첨부</td>
+                <td colspan="2">
+                <input type="file">   <br>
+                200 X 200 픽셀 이하 크기만 허용
+                </td>
+            </tr>
+            <tr>
+                <td>이름표시 아이콘</td>
+                <td colspan="2">
+                <input type="file">
+                <button>찾아보기</button>   <br>
+                25 X 25 픽셀 이하 크기만 허용
+                </td>
+            </tr>
+            <tr>
+              <td>혼인여부</td>
+              <td>
+                <form action="">
+                <label for="male">미혼  </label>
+                <input type="radio" name ="gender" id = "male" value ="male">
+                <label for="female">기혼  </label>
+                <input type="radio" name ="gender" id = "female" value ="female" >
+                <label for="male">이혼  </label>
+                <input type="radio" name ="gender" id = "male" value ="male">
+                <label for="female">교제중  </label>
+                <input type="radio" name ="gender" id = "female" value ="female" >
+                 </form>
+                </td>
+                <td>
+                    <input type="checkbox" name="emailopen" > 비공개
+              </td>
+            </tr>
+            <tr>
+                <td>관심분야</td>
+                <td>
+                    <form action="">
+                        <select name="year" id="year">
+                            <option value="">선택없음</option>
+                            <option value="032">032</option>
+                            <option value="02">02</option>
+                            <option value="031">031</option>
+                            <option value="064">064</option>
+                        </select>
+                    
+                    </form>
+                </td>
+                <td><input type="checkbox" name="emailopen" > 비공개</td>
+            </tr>
+            <tr>
+                <td>캐릭터 선택</td>
+                <td colspan="2">
+                <input type="file">  
+                </td>
+            </tr>
+            <tr>
+                <td>메일링 수신거부</td>
+                <td colspan="2">
+                    <input type="checkbox" name="emailopen" > 메일링 수신 거부시 체크
+                </td>
+            </tr>
+            <tr>
+                <td>쪽지 수신거부</td>
+                <td colspan="2">
+                    <input type="checkbox" name="emailopen" > 쪽지 수신 거부시 체크
+                </td>
+            </tr>
+            <tr>
+                <td>전체 비공개</td>
+                <td colspan="2">
+                    <input type="checkbox" name="emailopen" > 회원등록정보 전체 비공개시 체크
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="3"><button>입력완료전송</button><button>다시입력하기</button></td>
+
+            </tr>
+        </tbody>
+     </table>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        button을 2개 준비
+        + / -
+          0   => h1 태그   올리면 올라가고 내리면 내려가고 만들기 마이너스는 안되게 0보다는 안떨어지게
+                           (최소값0)
+    -->
+    
+    <h1 id = 'num'>
+        0
+    </h1>
+   
+    <div>
+        <button type="button" id =  'incre'>+</button>
+        <button type="button" id =  'decre'>-</button>
+ 
+    </div>
+
+        <!---------------------스크립트 부분S-------------------------->
+        <script>
+            const  num = document.getElementById('num');
+            const  incre = document.getElementById('incre');
+            const  decre = document.getElementById('decre');
+            
+            incre.addEventListener('click', function(){
+                let currVal = Number(num.innerText) ;
+                console.log(currVal);
+                num.innerText = currVal+1;
+            })
+
+            decre.addEventListener('click',function(){
+                let currVal = Number(num.innerText) ;
+                if(currVal<=0){
+                    numinnerText = 0;
+                }else{
+                    num.innerText = currVal - 1;
+                }
+            })
+
+            // let count = 0;
+            // function add(){
+            //     return 1; //2~9 8개
+            // }
+            // function minus(){
+            //     return -1; //2~9 8개
+            // }
+
+            // document.getElementById('btn_1').addEventListener('click', function(){
+            //     count += add();
+            //         h_1.innerHTML = count;
+            // })
+
+            // document.getElementById('btn_2').addEventListener('click', function(){
+            //     count += minus();
+            //     if (count < 0){ count = 0}
+            //     h_1.innerHTML = count;
+            // })
+        </script>
+        <!---------------------스크립트 부분E-------------------------->
+
+
+</body>
+</html>

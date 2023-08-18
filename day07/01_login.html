@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+    <style>
+        body{
+            background-color: rgb(82, 184, 150);
+        }
+        .container{
+            width: 300px;
+            /* 공식 시작 ---화면의 정중앙에 위치하기 위한 공식 포지션 앱솔루트  */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:  translate(-50%, -50%);
+            /* 공식 끝 ---*/
+            /* border: 1px solid black; */
+            background-color: aliceblue;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px
+
+        }
+        .text-field{
+            width: 100%;
+            font-size: 15px;
+            padding: 10px;
+            box-sizing: border-box;  /*뭔가 다 합쳐서 100%해주세요 할때 이거 씀 안그럼 넘어감*/
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 0;
+            outline: none;
+        }
+        .btn-input{
+            width: 100%;
+            height: 37px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            background-color: rgb(82, 184, 150);
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .link>a{
+            text-decoration: none;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="text-field" name ="id" placeholder="아이디">
+            <input type="password" class="text-field" name="pw" placeholder="비밀번호">
+            <input type="submit" class="btn-input" value="로그인">
+        </form>
+        <div class ="link">
+            <a href="">비밀번호를 잊어버리셨나요</a>
+        </div>
+    </div>
+</body>
+</html>

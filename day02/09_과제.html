@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .cgoo:hover{
+            color: rgb(147, 255, 5);
+        }
+        .cnav:hover{
+            color: rgb(255, 1, 192);
+        }
+        .cda:hover{
+            color: rgb(107, 43, 255);
+        }
+
+        #igo{
+            color:bisque;
+        }
+        #idau.a:active(클릭할때 색){
+            color:brown;
+        }
+        #idau{
+            font-size: 50;
+        }
+        body>ul{
+            color: aqua;
+        }
+        li:nth-child(even){
+            color: green;
+        }
+        li:nth-child(odd){
+            /* font-weight: 900; */
+            color: red;
+        }
+        li:nth-child(1){
+            font-weight: 900
+        }
+        li:nth-child(10){
+            font-weight: 900
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        div 3개를 만들어
+        naver, google, daum 사이트로 연결되게 하고,
+        각 div는 색깔과 모양을 달리 스타일 주기.
+        color : 글자색
+        background-color : 면색
+        폰트 관련 스타일들.
+
+        링크 클릭했는지에 따라서 글꼴 색이 달라지는 가상선택자가 있음.
+        (의사선택자)
+        a:link(방문전)
+        a:visited(링크를 눌러본 후 색)
+        a:active(클릭할때 색)
+     -->
+     <div><a id="inave" class="cnav" href="http://www.naver.com">naver</a></div>
+     <div><a id="igo" class = "cgoo" href="http://www.google.com">google</a></div>
+     <div><a id="idau" class="cda" href="http://www.daum.net">daum</a></div>
+
+     <!-- 
+        ul -> li 태그 10개 생성
+        전체 글자크기 크게(일정하게..)
+        짝수 : 색 변경
+        3, 6, 9 : 초록색
+        1, 10 : 굵게
+        :hover
+      -->
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+      </ul>
+
+     <!-- 
+        ul -> li 태그 10개 생성
+        전체 글자크기 크게(일정하게..)
+        짝수 : 색 변경
+        3, 6, 9 : 초록색
+        1, 10 : 굵게
+        :hover
+      -->
+          <!-- 
+        div 3개를 만들어
+        naver, google, daum 사이트로 연결되게 하고,
+        각 div는 색깔과 모양을 달리 스타일 주기.
+        color : 글자색
+        background-color : 면색
+        폰트 관련 스타일들.
+
+        링크 클릭했는지에 따라서 글꼴 색이 달라지는 가상선택자가 있음.
+        (의사선택자)
+        a:link(방문전)
+        a:visited(링크를 눌러본 후 색)
+        a:active(클릭할때 색)
+     -->
+      <div>
+        <a href="http://www.naver.com" target="_blank">naver</a>
+      </div>
+      <div>
+        <a href="http://www.google.com" target="_blank">google</a>
+      </div>
+      <div>
+        <a href="http://www.daum.com" target="_blank">daum</a>
+      </div>
+</body>
+</html>

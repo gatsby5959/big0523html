@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myH1 {
+            font-size: 72px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+        #myH3 {
+            text-align: center;
+        }
+        #section {
+            display: flex;
+            justify-content: space-between;
+        }
+        .character-info {
+            width: 30%;
+        }
+        .character-name { /* 캐릭터 이름에만 적용될 스타일 */
+            font-style: italic; /* 기울임체 */
+            font-size: 24px; /* 큰 글자 크기 */
+        }
+    </style>
+</head>
+<body>
+<h1 id="myH1"></h1>   
+<h3 id="myH3"></h3>   
+
+<header id="header"></header>
+<section id="section"></section>
+
+<script>
+  let header = document.querySelector('header');
+  let section = document.querySelector('section');
+  let h1 = document.querySelector('#myH1');
+  let h3 = document.querySelector('#myH3');
+
+  fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+    .then(res => res.json())
+    .then(data => {
+      h1.textContent = data.squadName;
+      h3.textContent = 'Hometown: ' + data.homeTown + ' // Formed: ' + data.formed;
+
+      // 멤버 정보 출력
+      data.members.forEach(member => {
+        let div = document.createElement('div');
+        div.className = 'character-info';
+        let h2 = document.createElement('h2');
+        h2.className = 'character-name'; // 이름에만 추가될 클래스
+        h2.textContent = member.name;
+        div.appendChild(h2);
+        let p1 = document.createElement('p');
+        p1.textContent = 'Secret identity: ' + member.secretIdentity;
+        div.appendChild(p1);
+        let p2 = document.createElement('p');
+        p2.textContent = 'Age: ' + member.age;
+        div.appendChild(p2);
+        let p3 = document.createElement('p');
+        p3.textContent = 'Superpowers:';
+        div.appendChild(p3);
+        let ul = document.createElement('ul');
+        member.powers.forEach(power => {
+          let li = document.createElement('li');
+          li.textContent = power;
+          ul.appendChild(li);
+        });
+        div.appendChild(ul);
+        section.appendChild(div);
+      });
+    });
+</script>
+</body>
+</html>

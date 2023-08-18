@@ -1,0 +1,261 @@
+
+
+/*전체 모든 스타일 적용내용---------------------------------S*/
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100%;
+}
+
+/*전체 모든 스타일 적용내용---------------------------------E*/
+
+
+/*거의 모바일용....-------------------------------------------S*/
+.body1{
+    width: 100%;
+    float: left;
+    height: 170px;
+    background-image: url(/image/room.jpg);
+    background-size: cover; /* 전체 덮기*/
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 150px;
+    background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 0) 10%,
+        rgba(20, 20, 20, 0.25) 25%,
+        rgba(20, 20, 20, 0.5) 50%,
+        rgba(20, 20, 20, 0.75) 75%,
+        rgba(20, 20, 20, 1) 100%
+      ), url(/image/room.jpg); /*url(https://source.unsplash.com/random);*/
+      background-size: cover;
+}
+
+.div1{
+    float: left;
+}
+.div2{
+    float: left;
+    width: 100%;
+}
+.div3{
+    width: 10%;
+    float: left;
+    font-weight: 800; /*두껍게*/
+    color: aliceblue;
+    font-size: 30px;
+}
+.div4{
+    text-align: right;
+    width: 90%;
+    float: left;
+    font-weight: 800; /*두껍게*/
+    color: aliceblue;
+}
+.div5{
+    margin-top: 50px;
+    height: 200px;
+
+}
+.textcon1{
+    font-weight: 100; /*두껍게*/
+    color: aliceblue;
+    font-size: 30px;
+}
+.textcon2{
+    font-weight: 800; /*두껍게*/
+    color: aliceblue;
+    font-size: 20px;
+
+    padding-top: 20px;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+    width: 200px;
+    height: 50px;
+    background-size: 300px 200px;
+    border-radius: 10px 10px 10px 10px; 
+    
+    border: 2px solid white;
+    
+    cursor: pointer;
+    text-decoration: none;
+}
+p { margin: 150px 0px 10px 0px; line-height: 120%; }
+a { text-decoration: none; color: aliceblue;}
+
+
+/*거의 모바일용....-------------------------------------------E*/
+
+
+
+
+/*800보다 크면 적용... 아마 한 패드? 정도급?--------------S */
+@media screen and (min-width: 800px) {  /*800보다 클떄용*/
+    .body1{
+        width: 100%;
+        float: left;
+        height: 500px;
+        background-image: url(/image/room.jpg);
+        background-size: cover; /* 전체 덮기*/
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 150px;
+        background: linear-gradient(
+            to right,
+            rgba(20, 20, 20, 0) 10%,
+            rgba(20, 20, 20, 0.25) 25%,
+            rgba(20, 20, 20, 0.5) 50%,
+            rgba(20, 20, 20, 0.75) 75%,
+            rgba(20, 20, 20, 1) 100%
+          ), url(/image/room.jpg); /*url(https://source.unsplash.com/random);*/
+          background-size: cover;
+    }
+
+    .div1{
+        float: left;
+    }
+    .div2{
+        float: left;
+        width: 100%;
+    }
+    .div3{
+        width: 10%;
+        float: left;
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 30px;
+    }
+    .div4{
+        text-align: right;
+        width: 90%;
+        float: left;
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+    }
+    .div5{
+        margin-top: 50px;
+        height: 200px;
+
+    }
+    .textcon1{
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 40px;
+    }
+    .textcon2{
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 20px;
+   
+        padding-top: 20px;
+        margin: auto;
+        text-align: center;
+        color: aliceblue;
+        width: 200px;
+        height: 50px;
+        background-size: 300px 200px;
+        border-radius: 10px 10px 10px 10px; 
+        
+        border: 2px solid white;
+        
+        cursor: pointer;
+        text-decoration: none;
+    }
+    p { margin: 150px 0px 10px 0px; line-height: 120%; }
+    a { text-decoration: none; color: aliceblue;}
+}
+/*800보다 크면 적용... 아마 한 패드? 정도급?--------------E */
+
+
+
+
+
+
+
+
+
+
+/*1200보다 크면 적용... 모니터 해상도 1920할떄 의 숫자임--------------S */
+@media screen and (min-width: 1200px){ /*1200보다 클때 */
+
+    .body1{
+        width: 100%;
+        float: left;
+        height: 1000px;
+        background-image: url(/image/room.jpg);
+        background-size: cover; /* 전체 덮기*/
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 150px;
+        background: linear-gradient(
+            to right,
+            rgba(20, 20, 20, 0) 10%,
+            rgba(20, 20, 20, 0.25) 25%,
+            rgba(20, 20, 20, 0.5) 50%,
+            rgba(20, 20, 20, 0.75) 75%,
+            rgba(20, 20, 20, 1) 100%
+          ), url(/image/room.jpg); /*url(https://source.unsplash.com/random);*/
+          background-size: cover;
+    }
+
+    .div1{
+        float: left;
+    }
+    .div2{
+        float: left;
+        width: 100%;
+    }
+    .div3{
+        width: 10%;
+        float: left;
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 30px;
+    }
+    .div4{
+        text-align: right;
+        width: 90%;
+        float: left;
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+    }
+    .div5{
+        margin-top: 50px;
+        height: 200px;
+
+    }
+    .textcon1{
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 80px;
+    }
+    .textcon2{
+        font-weight: 800; /*두껍게*/
+        color: aliceblue;
+        font-size: 20px;
+   
+        padding-top: 20px;
+        margin: auto;
+        text-align: center;
+        color: aliceblue;
+        width: 200px;
+        height: 50px;
+        background-size: 300px 200px;
+        border-radius: 10px 10px 10px 10px; 
+        
+        border: 2px solid white;
+        
+        cursor: pointer;
+        text-decoration: none;
+    }
+    p { margin: 150px 0px 10px 0px; line-height: 120%; }
+    a { text-decoration: none; color: aliceblue;}
+
+}
+/*1200보다 크면 적용... 모니터 해상도 1920할떄 의 숫자임--------------S  */

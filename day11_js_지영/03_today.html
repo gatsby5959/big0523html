@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘</title>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" onclick="printToday()">Today</button>
+    <h3 id="date">
+        <!-- 오늘 날짜와 요일을 출력 -->
+        <!-- 2023.07.31.(월) -->
+        
+    </h3>
+    <script>
+        function printToday(){
+            let now = new Date();
+            let date = document.getElementById('date');
+            date.innerText = now.toLocaleDateString();
+
+            switch(now.getDay()){
+                case 0: date.innerText += ' (일)'; break;
+                case 1: date.innerText += ' (월)'; break;
+                case 2: date.innerText += ' (화)'; break;
+                case 3: date.innerText += ' (수)'; break;
+                case 4: date.innerText += ' (목)'; break;
+                case 5: date.innerText += ' (금)'; break;
+                case 6: date.innerText += ' (토)'; break;
+            }
+
+        }
+    </script>
+</body>
+</html>

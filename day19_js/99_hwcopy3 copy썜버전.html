@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/day03/style.css">
+</head>
+<body class="paris-pag">
+    <!-- <div class="tra"> -->
+        <h1  class="tra">Travel</h1>
+    <!-- </div> -->
+    <ul class="u">
+        
+        <li id="Home" class = "curr_view" onclick="clickCity(this)"><a >Home</a></li>
+        <li id="seoul" onclick="clickCity(this)" ><a>Seoul</a></li>
+        <li id="tokyo" onclick="clickCity(this)" ><a>Tokyo</a></li>
+        <li id="paris" onclick="clickCity(this)" ><a>Paris</a></li>
+       
+        <!-- <li id="uh">Home</li>
+        <li id="aseoul">Seoul</li>
+        <li id="atokyo">Tokyo</li>
+        <li id="aparis">Paris</li> -->
+    </ul>
+    <br>
+    <img id="cityImg" src="/image/home.jpg" alt="퐈리사진없음" alt="Home"  >
+
+    <script>
+      const clickCity = (elem) => {
+          console.log(elem);
+          console.log(elem.id);
+          let idVal = elem.id;
+          document.getElementById('cityImg').src =
+           `/image/${idVal}.jpg`;
+      }
+    </script>
+
+</body>
+</html>

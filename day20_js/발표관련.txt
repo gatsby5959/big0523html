@@ -1,0 +1,12 @@
+main 화면
+
+header 
+footer
+
+- 로그인 화면, 회원가입 화면
+- 문의할수 있는 게시판
+- subpage(상세페이지)
+
+총 10page내외
+
+ppt 

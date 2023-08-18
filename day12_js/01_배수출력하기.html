@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button type="button"  id="btn">배수출력</button>
+    <input type="text" id="num">
+    <h1>배수 출력하기(1~100 중 입력한 숫자의 배수를 출력)</h1>
+
+    <h3 id="result">
+        배수값 출력 <br>
+    </h3>
+
+    <script>
+        let r = document.getElementById('result').innerText;
+        console.log(r);
+
+        function muliple(num){
+            console.log(num);
+            //배수처리
+            let str = `${r}<br>`; // 원래 있던 값 추가
+            let count = 0; // 배수의 개수를 세기 위한 변수
+
+            for(let i=1; i<100 ; i++){
+                if(i % num == 0){
+                    str += `${i}  `;
+                    count++;
+                }
+            }
+            //string 타입의 리턴으로 처리
+            return `${str}<br> 총 ${count}개`;
+        }
+
+        document.getElementById('btn').addEventListener('click',()=>{
+            let num = document.getElementById('num').value;
+            console.log(num);
+            document.getElementById('result').innerHTML = muliple(num);
+            //콜백함수??? 막 연결해서 사용
+        })
+
+    </script>
+
+    <script>
+        //  function result() {
+        //     let a = 1;
+        //     let ja = document.getElementById('num').value;
+        //     document.getElementById("result").innerText=``;
+        //             for(let i = 1; i <= 100; i++) {
+        //                 if(i % ja == 0){
+        //                     document.getElementById("result").innerText+=
+        //              ` ${i}`;
+        //                 }
+                        
+        //             };
+
+        //         }
+
+
+        // document.getElementById('hi').addEventListener('click',()=>{
+        //     let a = 1;
+        //     let ja = document.getElementById('num').value;
+        //     document.getElementById("result").innerText=``;
+        //             for(let i = 1; i <= 100; i++) {
+        //                 if(i % ja == 0){
+        //                     document.getElementById("result").innerText+=
+        //              ` ${i}`;
+        //                 }  
+        //             };
+        // })
+
+    </script>
+</body>
+</html>

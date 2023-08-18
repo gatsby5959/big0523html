@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+  <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+
+  <style>
+
+    #myh1 {
+
+      font-size: 40px;
+
+      font-weight: bold;
+
+      text-align: center;
+
+    }
+
+
+    div {
+
+      text-align: center;
+
+    }
+
+
+    .div0 {
+
+      height: 70px;
+
+      background-color: rgb(26, 238, 192);
+
+      padding-top: 20px;
+
+    }
+
+
+    .inputbox1 {
+
+      width: 600px;
+
+      height: 30px;
+
+      margin-top: 10px;
+
+      margin-bottom: 10px;
+
+      outline: none;
+
+      border: none;
+
+    }
+
+
+    .button1 {
+
+      padding-top: 0px;
+
+      padding-bottom: 3px;
+
+      text-align: center;
+
+      color: black;
+
+      font-size: 15px;
+
+      width: 50px;
+
+      height: 32px;
+
+      background-color: rgb(238, 238, 238);
+
+      outline: none;
+
+      border: none;
+
+      cursor: pointer;
+
+      box-shadow: 4px 4px 4px gray ;
+
+    }
+
+
+    ul {
+
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+
+    }
+
+
+
+    .div00cl {
+
+      width: 700px;
+
+      position: absolute;
+
+      top: 100px;
+
+      left: 50%;
+
+      transform: translate(-50%, 0);
+
+      text-align: center;
+
+      border-radius: 10px;
+
+      padding: 20px;
+
+    }
+
+
+    .list-container {
+
+      position: absolute;
+
+      top: 210px;
+
+      width: 700px;
+
+      left: 50%;
+
+      transform: translate(-50%, 0);
+
+      max-height: 200px;
+
+      overflow-y: auto;
+
+      border-radius: 1px;
+
+    }
+
+
+    li {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding-left: 5px;
+
+      padding-top: 5px;
+
+      padding-bottom: 5px;
+
+    }
+
+
+    .classrremove {
+
+      cursor: pointer;
+
+    }
+
+    li:nth-child(odd) {
+
+    
+     background-color: rgba(231, 231, 231, 0.555);
+
+    }
+
+
+    li:nth-child(even) {
+
+
+      background-color: rgba(255, 255, 223, 0.5);
+
+    }
+
+    li:hover {
+
+      background-color: rgba(119, 119, 119, 0.5);
+
+    }
+
+    span {
+
+      padding-right: 7px;
+
+    }
+
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <h1 id='myh1'>
+
+    여행 준비물 점검 목록
+
+  </h1>
+
+  <div id='div00id' class="div00cl">
+
+    <form action="">
+
+      <div class="div0">
+
+        <input class="inputbox1" type="text" id="inputbox1id" required>
+
+        <button type="button" class="button1" id="btn1">추가</button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="list-container">
+
+    <ul id="itemList">
+
+        <!-- 여기에 목록이 추가됨 -->
+
+    </ul>
+
+  </div>
+
+  <script>
+
+    let arrayitems = [];
+
+
+    document.getElementById('btn1').onclick = () => {
+
+      let val = document.getElementById('inputbox1id').value.trim();
+
+      if (val !== '') {
+
+        arrayitems.push(val);
+
+        renderItems();
+
+        document.getElementById('inputbox1id').value = '';
+
+      } else {
+
+        alert('값을 입력해주세요.');
+
+      }
+
+    };
+
+    function renderItems() {
+
+      let ul = document.getElementById('itemList');
+
+      ul.innerHTML = '';
+
+      arrayitems.forEach((item, index) => {
+
+        ul.innerHTML += '<li>' + item + '<span class="classrremove" onclick="removeItem(' + index + ')">X</span></li>';
+
+      });
+
+    }
+
+    function removeItem(index) {
+
+      arrayitems.splice(index, 1);
+
+      renderItems();
+
+    }
+
+  </script>
+
+</body>
+
+</html>

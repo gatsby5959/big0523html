@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table>tbody>tr>td{
+            width: 300px;
+        }
+    </style>
+</head>
+
+<button type="button" id="btn">구구단 출력</button>
+<div id = "gugu">
+<!-- 
+    2*1=2 
+    2*2=4
+    2*3=6
+ -->
+</div>
+<body>
+    <script>
+        document.getElementById('btn').addEventListener('click',()=>{
+            let str =`<table>`;
+            let incre = 1;
+            while(incre < 10){
+                    let dan = 2;
+                    str += `<tr>`;
+                        while(dan < 10){
+                            str += `<td> ${dan}*${incre}=${dan*incre} </td>`;
+                            dan++;
+                        }
+                        incre++;
+                        str += `</tr>`
+            }
+                str += `</table>`
+        document.getElementById('gugu').innerHTML= str;     
+        })
+    </script>
+</body>
+</html>

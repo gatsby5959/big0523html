@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="printImg()">Li Tag 한번에 추가하기</button>
+    <button id="abc"">Li Tag 하나씩 추가하기</button>
+
+    <u1 id="ul"></u1>
+    <hr>
+    <ol id="ol"></ol>
+</body>
+
+
+    <script>
+        let arra = ["HTML", "CSS", "javascript", "SQL"];
+        let aaaa = 0;
+
+        function printImg(){
+            // item  표시 function
+            let list = '';
+            //리스트 내용 표시
+            ul.innerHTML = '';
+            for(let i = 0; i < arra.length; i++) {
+                
+                ul.innerHTML += `<li>${arra[i]}</li>`;
+                
+            }
+            }
+
+
+
+            
+            
+            
+                document.getElementById("abc").addEventListener("click", ()=>{
+                    if(aaaa < arra.length){
+                    ol.innerHTML += `<li>${arra[aaaa]}</li>`;
+                aaaa++;}
+                })
+            
+        
+
+    
+        
+    
+    </script>    
+    
+
+</html>

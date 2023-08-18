@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id = myH1></h1>   
+<h3 id = myH3></h3>   
+
+<!-- <h3 id = myH3></h1>    -->
+
+    <header id =header>
+
+</header>
+<section id = section>
+
+</section>
+
+
+<script>
+
+let header = document.querySelector('header');
+let section = document.querySelector('section');
+
+fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+.then(resp => resp.json())
+.then(json => h1(json))
+// .then(json => h3(json))
+.catch(err => console.log(err)); //에러시;
+
+function h1(jsonObj){
+ 
+    str =`<h1>${jsonObj['squadName']}</h1>`
+    myH1.innerText = jsonObj['squadName'];
+    str +=`<h3>Hometown${jsonObj['homeTown']}</h3>`
+    myH3.innerText = jsonObj['homeTown'];
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>

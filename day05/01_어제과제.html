@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        .round{
+            width: 100%;
+        }
+
+        .menu-box {
+            width: 200px; /* 가로 넓이 */
+            float: left; /* 왼쪽으로 고정*/
+        }
+
+        .box {
+            width: calc(100% - 220px);
+            height: 500px; /*세로 넓이*/
+            border: 1px solid black;
+            float: right; /* 오른쪽으로 고정*/
+            background-image: url(/image/test.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .menu{
+            width: 100%;
+            height: 30px;
+            display: block; /* 블록 속성 강제변환*/
+            border: 1px solid black; /*테두리*/
+            border-bottom: none;
+            text-align: center; /*중간 고정*/
+            text-decoration: none; /*밑줄 제거*/
+            color: black;
+            font-weight: 700;
+            line-height: 30px; 
+            font-size: 15px;
+            
+        }
+
+        .menu:hover {
+            background-color: tomato;
+        }
+
+        .menu:last-child {
+            border-bottom: 1px solid black;
+        }
+
+    </style>
+    <body>
+        <div class="round">
+            <div class="menu-box">
+                <a href="#" class="menu">메뉴 1</a>
+                <a href="#" class="menu">메뉴 2</a>
+                <a href="#" class="menu">메뉴 3</a>
+                <a href="#" class="menu">메뉴 4</a>
+            </div>
+            <div class="box"></div>
+        </div>
+    </body>
+    </html>
+</body>
+</html>

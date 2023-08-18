@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Diphylleia&family=Faster+One&display=swap" rel="stylesheet"><!--이걸 해야하는데 이건-->
+   <!-- 구글 폰트 에가서 + 누르고 link에 맨 마지막 1개 그리고 css의 맨 마지막 1개만 쓴다 위에것은 link의 맨 마지막 1개이다.-->
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>superHero</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #header{
+            margin-bottom: 50px;
+        }
+        #hero{
+            display: inline-block; /*옆으로 쌓이게함*/
+            vertical-align: text-top; /*위 기준으로 하기*/
+            margin: 0 30px;
+            text-align: left; /*그안에서 왼쪽으로...정렬*/
+        }
+        #header>h1{ 
+            margin-bottom: 50px;
+            /* font-family: 'Bungee Inline', cursive; */
+            font-family: 'Faster One', cursive;
+        }
+
+        #hero > div:first-child{
+            font-size: 20px;
+            /* font-family: 'Bungee Inline', cursive; */
+            font-family: 'Faster One', cursive;/*////////////////////////////////////////////////////// 이건 위의 스타일의 css의 맨 마지막 1개만 복붙한거다 */
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <section id="section"></section>
+    
+
+    <script>
+        //ajax 비동기통신을 통한 데이터를 가져오기.
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+        .then(resp => resp.json())
+        .then(json => printData(json));
+
+        const header = document.getElementById('header');
+        const section = document.getElementById('section');
+
+        function printData(obj){
+            console.log(obj);
+            //header 객체에 넣을 str 생성
+            let str = '';
+            str += `<h1>${obj.squadName}</h1>`;
+            str += `<h3>Hometown: :${obj.homeTown} + ' // Formed:'+ ${obj.formed}`
+            header.innerHTML = str;
+
+
+            //section 객체에 넣을str 생성
+            for(let i = 0; i< obj.members.length; i++){
+                let member = obj.members[i];
+                let str1 = `<div id="hero">`;
+                    str1 += `<div> ${member.name}</div>`;
+                    str1 += `<div>secretIdentity: ${member.secretIdentity}</div>`;
+                    str1 += `<div>Age :${member.age}</div>`;
+                    str1 += `<div>Superpowers :<ul id="power${i}">               </ul></div>`;
+                    str1 += `</div>`;
+                    section.innerHTML += str1;
+
+                    for(let j=0; j<obj.members[i].powers.length; j++){
+                        document.getElementById(`power${i}`).innerHTML +=
+                        `<li>${obj.members[i].powers[j]}</li>`;
+                    }
+            }
+        }
+
+    </script>
+</body>
+</html>

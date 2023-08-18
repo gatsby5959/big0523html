@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = btn1>Li Tag 한번에 추가하기</button>
+    <button id = btn2>Li Tag 하나씩 추가하기</button><!--array에 값을 하나씩 넣기?-->
+    <button id = btn3>Li Tag 한번에 추가하기2</button>
+    <button id = btn4>Li Tag 하나씩 추가하기2</button>
+    <ul id = ul>
+        <!-- <li>HTML</li>
+        <li>HTML</li>
+        <li>HTML</li>
+        <li>HTML</li> -->
+    </ul>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click',()=>{   
+        // console.log('hihi');
+        //HTML
+        //CSS
+        //javascript
+        //SQL
+        let ul = document.getElementById('ul');
+        ul.innerHTML +=`
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>SQL</li>
+        <hr>
+        `
+        })
+
+
+
+        let clickcount = 0;
+        let arrayK = [];
+        arrayK = ["HTML","CSS","javascript","SQL"];
+
+        document.getElementById('btn2').addEventListener('click',()=>{
+        if(clickcount<4){  
+        console.log('버튼 2 되나?');
+        console.log(arrayK);
+        ul.innerHTML +=`
+        <li>${arrayK[clickcount]}</li>
+        `;
+        
+        }
+        if(clickcount==4){
+            ul.innerHTML += `<hr>`
+        }
+        clickcount++; 
+        }
+        )
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1~45까지의 중복되지 않는 숫자 6개가 랜덤으로 추출 후 순서대로 출력하기</h1>
+    <h1>단 , Set 객체를 사용할 것</h1>
+    <button id = btn_ran6>랜덤번호 6개 출력하기</button>
+    <h2 id = h2>예시) 1,13,21,31,46,36</h2>
+    <button id = btn_ran7>당첨번호 7개(마지막은 보너스~) 출력하기</button>
+    <h2 id = h2_2>예시) 12,13,27,30,31,33,39</h2>
+    <button id = 'result_btn'>결과확인</button>
+    <h3 id = h3>예시)3등</h3>
+    <!--꽝~!!-->
+
+    <script>
+let playerArr= [];
+let lotto6 =[] ;
+let bonusNumber = 0;
+    document.getElementById('btn_ran6').addEventListener('click', function(){
+        
+     // const playerSet = new Set([]);
+     function makeRandomSu(){
+        
+        return Math.floor(Math.random()*45)+1; //1부터포함해서 45개   1~45
+    }
+
+
+
+        // for(let i =0; i <= 6; i++) {
+            
+        // let a = makeRandomSu();
+      
+        // }
+        // console.log(testSet);
+
+        let playerSet = new Set([makeRandomSu(),makeRandomSu(),makeRandomSu(),
+                                 makeRandomSu(),makeRandomSu(),makeRandomSu()]);
+        // console.log('하잉');
+        while (playerSet.size != 6){
+            console.log('set 내부 숫자 갯수가 6개가 아님 6개 나올때까지 while 돌림 ' )
+            playerSet = new Set([makeRandomSu(),makeRandomSu(),makeRandomSu(),
+                                 makeRandomSu(),makeRandomSu(),makeRandomSu()]);
+            if (playerSet.size == 6) {break};
+        }
+        console.log(playerSet);
+        
+
+        
+        // for(let i=1; i<=6; i++){
+        //     playerArr.push( Math.floor(Math.random()*45)+1);
+        // }
+        // playerArr.sort(function(a,b){
+        //     return a-b; //오름차순
+        // })
+
+        h2.innerHTML=``;
+        playerArr = [];
+        for(const iter of playerSet.values()){  //요거랑
+            console.log(iter);
+            
+            
+            playerArr.push( iter);
+            playerArr.sort(function(a,b){
+            return a-b; //오름차순
+            })
+        }
+        // for(let i=1; i<=6; i++){
+       
+        h2.innerHTML += playerArr;
+        
+        // }
+        // h2.innerHTML = h2.innerHTML.slice(0, -1);  // 마지막에 추가한 쉼표를 제거
+       
+        // const myArr= [];
+        // // const ourClass = [];
+        // //1~45까지의 랜덤숫자 6개를 생성 배열에 저장 후 콘솔에 출력
+        // for(let i=1; i<=6; i++){
+        //     myArr.push( Math.floor(Math.random()*45)+1);
+        //     // let randomsu = Math.floor(Math.random()*45)+1;
+        //     // myArr[i] = randomsu;
+        // }
+        // myArr.pop();
+        // console.log(myArr);
+        // //정렬후 다시 콘솔에 찍어보기
+        // myArr.sort(function(a,b){
+        //         return a-b; //오름차순
+        //     })
+        // console.log(myArr);    
+
+        // const cars=[
+        //     {type:'Volvo', year:2020},
+        //     {type:'Benz', year:2022},
+        //     {type:'BMW', year:2023}
+        // ];
+    })
+
+
+    document.getElementById('btn_ran7').addEventListener('click', function(){
+     // const playerSet = new Set([]);
+    
+    //  const playerArr= [];
+     function makeRandomSu(){
+            return Math.floor(Math.random()*45)+1; //1부터포함해서 45개   1~45
+        }
+        // for(let i =0; i <= 6; i++) {
+            
+        // let a = makeRandomSu();
+      
+        // }
+        // console.log(testSet);
+
+        let playerSet = new Set([makeRandomSu(),makeRandomSu(),makeRandomSu(),
+                                 makeRandomSu(),makeRandomSu(),makeRandomSu(),makeRandomSu()]);
+        // console.log('하잉');
+        while (playerSet.size != 7){
+            console.log('set 내부 숫자 갯수가 7개가 아님 7개 나올때까지 while 돌림 ' )
+            playerSet = new Set([makeRandomSu(),makeRandomSu(),makeRandomSu(),
+                                 makeRandomSu(),makeRandomSu(),makeRandomSu(),makeRandomSu()]);
+            if (playerSet.size == 7) {break};
+        }
+        console.log(playerSet);
+
+        h2_2.innerHTML=``;
+        lotto6 = Array.from(playerSet.values());
+        bonusNumber = lotto6.pop(); // 배열에서 마지막 숫자를 제거하고, 제거된 숫자를 bonusNumber에 저장
+
+        lotto6.sort(function(a, b) {
+            return a - b; // 오름차순
+        });
+
+        // 마지막 숫자를 제외하고 정렬된 숫자를 출력
+        for (let i = 0; i < lotto6.length; i++) {
+            h2_2.innerHTML += `${lotto6[i]},`;
+        }
+        console.log('a');
+        h2_2.innerHTML = h2_2.innerHTML.slice(0, -1); 
+        console.log('b');
+        // 마지막 숫자를 "보너스 숫자"로 표시하여 출력
+        h2_2.innerHTML += ` 보너스 숫자: ${bonusNumber}`;
+    
+    })
+
+
+    document.getElementById('result_btn').addEventListener('click', function(){
+        // console.log('버튼눌림');
+        let matchCount = 0; 
+        let bonusMatch = false;
+       
+        for(let i=0; i<6; i++){
+            if (playerArr.includes(lotto6[i])) { //  사용자선택번호 .  당첨번호
+                matchCount++;
+            }
+        }
+
+        if (playerArr.includes(bonusNumber)) { // 보너스 번호와 사용자의 선택 번호 비교
+            bonusMatch = true;
+        }
+
+        // 로또 등수 결정
+        let result = '';
+        if(matchCount == 6){  // 보너스 무시, 다른거 다맞음 카운트6 1등
+            result = '1등';
+        } else if(matchCount == 5 && bonusMatch){ //보너스 true   카운트5개 맞음 2등
+            result = '2등';
+        } else if(matchCount == 5 && (bonusMatch==false)){ //보너스 false   카운트5개 맞음 3등
+            result = '3등';
+        } else if(matchCount == 4){ //카운트4개 맞음 4등
+            result = '4등';
+        } else if(matchCount == 3){ //카운트3 맞음 5등
+            result = '5등';
+        } else {
+            result = `꽝  일반수${matchCount}개만 맞음 보너스수${bonusMatch}`;
+        }
+
+        // 결과 출력
+        document.getElementById('h3').innerHTML = result;
+
+
+    })
+
+   
+    </script>
+</body>
+</html>

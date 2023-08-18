@@ -1,0 +1,148 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+<h1>
+
+구구단 영역(2*1=2 ~ 9*9=81)내에서 램덤으로 문제를 내면 정답을 맞추는 로직
+
+</h1>
+
+<ul>
+
+<li>
+
+총문제는 10문제 출제
+
+</li>
+
+<li>
+
+문제를 풀 때 정답, 오답의 결과를 나타냄
+
+</li>
+
+<li>
+
+총 10개의 문제중 정답률을 출력
+
+</li>
+
+</ul>
+
+<button id = btn1>문제출제</button>
+
+<ol id = "q">
+
+</ol>
+
+<button id = btn2>정답확인</button>
+
+<div id = "result">
+
+</div>
+
+
+<script>
+
+// let answers = {};
+
+let answers2 = [];
+
+
+
+
+
+document.getElementById('btn1').addEventListener('click',()=>{
+
+for(let i=1; i<=10 ; i++){
+
+let randomsu1 = Math.floor(Math.random()*8)+2;
+
+let randomsu2 = Math.floor(Math.random()*9)+1;
+
+let result = randomsu1 * randomsu2;
+
+document.getElementById('q').innerHTML += `<li>${randomsu1} X ${randomsu2} = <input id="inpu${i}" type="text"></input> <span id="result${i}"></span></li>`;
+
+// answers[`input${i}`] = result;
+
+answers2[i] = result;
+
+}
+
+});
+
+
+
+
+
+
+
+
+
+document.getElementById('btn2').addEventListener('click',()=>{
+
+console.log('btn2진입');
+
+let correctCount = 0;
+
+for(let i=1; i<=10 ; i++){
+
+let userAnswer = document.getElementById(`inpu${i}`).value;
+
+// if(userAnswer == answers[`input${i}`]){
+
+// document.getElementById(`input${i}`).style.backgroundColor = 'green';
+
+// document.getElementById(`result${i}`).innerText = '정답';
+
+// correctCount++;
+
+
+if(userAnswer == answers2[i]){
+
+document.getElementById(`inpu${i}`).style.backgroundColor = 'green';
+
+document.getElementById(`result${i}`).innerText = '정답';
+
+correctCount++;
+
+
+} else {
+
+document.getElementById(`inpu${i}`).style.backgroundColor = 'red';
+
+document.getElementById(`result${i}`).innerText = '오답';
+
+}
+
+}
+
+document.getElementById('result').innerText = `정답률: ${correctCount}/10`;
+
+});
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중 for문</title>
+    <style>
+    table, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        function showDatas() {
+        let a = 2;
+        let b = 1;
+        let tableHTML = "<table><tr>";
+        while(a<=9){
+            tableHTML += "<td>";
+            while(b<=9){
+                tableHTML += `${a} * ${b} = ${a*b} <br>`;
+                b++;
+            }
+            tableHTML += "</td>";
+            b=1;
+            a++;     
+        }
+        tableHTML += "</tr></table>";
+        document.getElementById('gugu').innerHTML = tableHTML;
+    }
+
+    function whichgugu(){
+        let wh = document.getElementById('whichgu').value;
+        let a = wh;
+        let b = 1;
+        let tableHTML = "<table><tr><td>";
+        while(b<=9){
+            tableHTML += `${a} * ${b} = ${a*b} <br>`;
+            b++;
+        }
+        tableHTML += "</td></tr></table>";
+        document.getElementById('gugu').innerHTML = tableHTML;
+    }
+
+    </script>
+    몇단으로 뽑아볼까요 : <input type="text" id = 'whichgu' value="2"><br>
+    <button type="button" onclick="whichgugu()">특정구구단만 출력</button>
+    
+    <h1>
+        구구단 2~9까지 출력하기
+    </h1>
+    <button type="button" onclick="showDatas()">구구단 출력</button>
+    <div id = "gugu">
+        <!-- 여기다가 구구단 출력 -->
+    </div>
+</body>
+</html>

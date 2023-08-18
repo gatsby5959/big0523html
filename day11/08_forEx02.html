@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이중 for문</title>
+</head>
+<body>
+    <script>
+        function showDatas() {
+        let a = 2;
+        let b = 1;
+        gugu.innerText = '   ';
+        while(a<=9){
+            gugu.innerText += `\n`;
+            while(b<=9){
+                console.log(` ${a} * ${b} = ${a*b} `);
+                gugu.innerText += `   \t   ${a} * ${b} = ${a*b}  \n   `;
+                b++;
+            }
+            b=1;
+            a++;     
+        }
+    }
+
+    function whichgugu(){
+        let wh = document.getElementById('whichgu').value;
+        console.log(wh);
+        let a = wh;
+        let b = 1;
+        gugu.innerText = '   ';
+        while(a<=9){
+            gugu.innerText += `\n`;
+            while(b<=9){
+                // console.log(` ${a} * ${b} = ${a*b} `);
+                gugu.innerText += `   \t   ${a} * ${b} = ${a*b}  \n   `;
+                b++;
+            }
+            // b=1;
+            a++;     
+        }
+    }
+
+    </script>
+    몇단으로 뽑아볼까요 : <input type="text" id = 'whichgu' value="2"><br>
+    <button type="button" onclick="whichgugu()">특정구구단만 출력</button>
+    
+    <h1>
+        구구단 2~9까지 출력하기
+    </h1>
+    <button type="button" onclick="showDatas()">구구단 출력</button>
+    <h3 id = gugu>
+        <!-- 여기다가 구구단 출력 -->
+    </h3>
+</body>
+</html>
+
+

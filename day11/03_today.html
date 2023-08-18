@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function result(){
+
+            // rNum = rNum.replace('-', ''); //그냥 속편히 지워버림 입력이 되든 말든 숫자로 계싼
+            
+
+            let now = new Date();
+            let curyear = now.getFullYear();
+
+            console.log(curyear);
+
+                    //오늘 날짜 반환
+        let today = new Date();
+        // console.log(typeof today);
+        // console.log(today.getFullYear()); //년도
+        // console.log(today.getMonth()+1); //월~ 11월 +1
+        // console.log(today.getDate()); //일반환 1~31
+        // console.log(today.getDay()); //요일 0(일)~6(토)
+        let curMonth = today.getMonth()+1;
+        let curDate = today.getDate();
+        let curDay = today.getDay();
+        if (curDay == 0){ curDay = '일'};
+        if (curDay == 1){ curDay = '월'};
+        if (curDay == 2){ curDay = '화'};
+        if (curDay == 3){ curDay = '수'};
+        if (curDay == 4){ curDay = '목'};
+        if (curDay == 5){ curDay = '금'};
+        if (curDay == 6){ curDay = '토'};
+        today.getDay();
+        today.getDay();
+
+              h3.innerText =`${curyear}.`
+              h3.innerHTML +=` ${curMonth}. `
+              h3.innerHTML +=` ${curDate}. `
+              h3.innerHTML +=` ( `
+              h3.innerHTML += `${curDay}`
+              h3.innerHTML +=` ) `
+              }
+    </script>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" onclick="result()">Today</button>
+    <h3 id = 'h3'>
+        <!-- 오늘 날짜와 요일을 출력 -->
+        <!-- 2023. 07. 31 (월) -->
+    </h3>
+</body>
+</html>

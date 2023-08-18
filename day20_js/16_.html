@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 버튼을 누르면 버튼이 나타나고 그거 누르면 생성된 버튼을 클릭함 이라는 버튼
+    
+        '생성된 버튼을 클릭함!'' 
+    
+    기본 버튼이 나타나고
+    
+    -->
+    <div class = clDiv1>
+    <button id = btn>엘리먼트 만들기</button>
+    <br>
+    <!-- <button id = btn2>생성된 버튼</button> -->
+    </div>
+
+
+    <script>
+        document.getElementById('btn').onclick = () =>{
+            // console.log('눌리니??');
+            let clDiv1 = document.querySelector('.clDiv1');
+            // console.log(clDiv1);
+            clDiv1.innerHTML += ` <button id = btn2>생성된 버튼</button>`;  //.innerHTML를 꼬옦 써야함
+       
+            document.getElementById('btn2').onclick = () =>{
+            // console.log('눌리네??');
+            clDiv1.innerHTML += `<h2>생성된 버튼을 클릭함!</h2>`;  //.innerHTML를 꼮 써야함
+            }
+    }
+
+        // document.getElementById('btn2').onclick = () =>{
+            // console.log('눌리니??');
+            // console.log(clDiv1);
+            // let clDiv1 = document.querySelector('.clDiv1');
+            // console.log(clDiv1);
+            // clDiv1.innerHTML += ` <button id = btn2>생성된 버튼</button>`;  //.innerHTML를 꼬옦 써야함
+        // }
+        
+    </script>
+</body>
+</html>

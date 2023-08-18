@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+        color: green;
+        }
+        #result2{
+        color: red;
+        }
+    </style>
+</head>
+<body>
+        <!-- input 파일에 파일명, 확장자 를 입력하여 전송 버튼을 누르면
+         이미지 파일인지 검사하여
+         이미지 파일이면
+         "정상파일입니다." <초록색>
+         이미지 파일이 아니면
+         "이미지 파일만 가능합니다." <빨간색>
+         출력하기
+         이미지파일 : jpg, png, jpeg, gif
+         - 대문자로 된 확장자명도 판단 가능해야 함.
+        -->
+
+        <input type="text" id = 'input1'>
+        <button id = 'btn1' >전송</button>
+        <h3 id ='result'></h3>
+        <h3 id ='result2'></h3>
+
+        <script>
+             let myName = "";
+        document.getElementById('btn1').addEventListener('click',()=>{
+            
+            console.log('btn1 버튼눌림');
+            // document.getElementById('btn1').value
+            myName = (document.getElementById('input1').value);
+            console.log(myName);
+            filecheck();
+          })
+        //   function filecheck(){
+            
+        //     console.log('filecheck() 실행 입력값은 오른쪽 ' + input1.value );
+        //     let fileName = input1.value;
+        //     for(const file of fileName){
+        //         if(file.match(/(jpg|jpeg|png|gif)/i)){
+        //             console.log('이미지 파일 : '+ file);
+        //         }else{
+        //             console.log(`그외 파일 : ${file}`)
+        //         }
+        //     }
+
+        // }
+
+
+       
+        function filecheck() {
+            console.log('함수실행1');
+            document.getElementById('result').innerText = ``;
+            document.getElementById('result2').innerText = ``;
+            
+                console.log(myName);
+             
+                if(myName.match(/(.jpg|.jpeg|.png|.gif)/ig)){
+                    
+                    // let slice_remain_lengh = 
+                    // if(slice_remain_lengh==0){
+                    console.log('함수실행2');
+                    document.getElementById('result').innerText = `정상 파일입니다.`;
+                    //  }
+                }else{
+                    document.getElementById('result2').innerText = `이미지 파일만 가능합니다..`;
+                }
+ 
+        }
+
+
+
+
+        </script>
+        
+        
+</body>
+</html>
