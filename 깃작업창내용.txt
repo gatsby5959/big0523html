@@ -1,0 +1,327 @@
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git config --global user.name "gatsby5959"
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git config --global user.email "aj1999@hanmail.net"
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=gatsby5959
+user.email=aj1999@hanmail.net
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git init
+Initialized empty Git repository in D:/전경환/_HtmlCssJs/.git/
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git add .
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git commit -m 'htmlcssjs'
+[master (root-commit) ce3ff20] htmlcssjs
+ 263 files changed, 86694 insertions(+)
+ create mode 100644 day01/01_text.html
+ create mode 100644 "day01/02_text\354\227\260\354\212\265\353\254\270\354\240\234.html"
+ create mode 100644 day01/03_input.html
+ create mode 100644 day01/04_input_ex.html
+ create mode 100644 "day01/05_tag\354\242\205\353\245\230.html"
+ create mode 100644 day01/06_atag.html
+ create mode 100644 "day01/07_a\354\213\261\354\273\244.html"
+ create mode 100644 day01/08_div.html
+ create mode 100644 day01/09_button.html
+ create mode 100644 day01/10_select.html
+ create mode 100644 "day01/11_\352\263\274\354\240\234.html"
+ create mode 100644 day02/01_textarea.html
+ create mode 100644 day02/02_list.html
+ create mode 100644 day02/03_table.html
+ create mode 100644 day02/04_img.html
+ create mode 100644 day02/05_iframe.html
+ create mode 100644 day02/06_tableEx.html
+ create mode 100644 day02/07_style.html
+ create mode 100644 day02/08_selector.html
+ create mode 100644 "day02/09_\352\263\274\354\240\234.html"
+ create mode 100644 day02/style.css
+ create mode 100644 "day02/\352\263\274\354\240\234\354\240\225\353\213\265.html"
+ create mode 100644 day03.zip
+ create mode 100644 day03/01_attribute_selector.html
+ create mode 100644 day03/02_color.html
+ create mode 100644 day03/03_font.html
+ create mode 100644 day03/04_text.html
+ create mode 100644 day03/05_border.html
+ create mode 100644 day03/06_background.html
+ create mode 100644 day03/07_shadow.html
+ create mode 100644 day03/08_icon.html
+ create mode 100644 day03/09_box.html
+ create mode 100644 day03/10_hw.html
+ create mode 100644 day03/10_hwcopy1.html
+ create mode 100644 day03/10_hwcopy2.html
+ create mode 100644 day03/10_hwcopy3.html
+ create mode 100644 day03/10_miran.html
+ create mode 100644 day03/2023-07-19 17 10 24 (2).png
+ create mode 100644 day03/2023-07-19 17 10 24 (3).png
+ create mode 100644 day03/2023-07-19 17 10 24.png
+ create mode 100644 day03/style.css
+ create mode 100644 day04/01_display.html
+ create mode 100644 day04/02_float.html
+ create mode 100644 day04/03_floatEx.html
+ create mode 100644 day04/04_position.html
+ create mode 100644 day04/05_positionEx.html
+ create mode 100644 day04/05_positionEx2.html
+ create mode 100644 day04/06_homework.html
+ create mode 100644 "day05/01_\354\226\264\354\240\234\352\263\274\354\240\234.html"
+ create mode 100644 "day05/01_\354\262\230\354\235\214\352\263\274\354\240\234.html"
+ create mode 100644 day05/02_positionEx2.html
+ create mode 100644 day05/03_zindex.html
+ create mode 100644 "day05/03_\353\254\270\354\240\234_jgh.html"
+ create mode 100644 day05/04_zindexEx.html
+ create mode 100644 day05/05_naverbox.html
+ create mode 100644 "day05/05_\354\227\260\354\212\265.html"
+ create mode 100644 day05/test.html
+ create mode 100644 day06/01_table.html
+ create mode 100644 day06/01_test1.html
+ create mode 100644 day06/02_bingo.html
+ create mode 100644 day06/03_animation.html
+ create mode 100644 day06/04_animationEx.html
+ create mode 100644 day06/05_animationEx2.html
+ create mode 100644 day06/06_test.html
+ create mode 100644 day06/06_transform.html
+ create mode 100644 "day06/06_\353\260\260\353\213\254\353\257\274\354\241\261.html"
+ create mode 100644 "day06/07_\352\263\274\354\240\234.html"
+ create mode 100644 "day06/07_\352\263\274\354\240\2342.html"
+ create mode 100644 day07/01_login.html
+ create mode 100644 day07/02_grid.html
+ create mode 100644 day07/03_media.html
+ create mode 100644 day07/04_rwdGrid.html
+ create mode 100644 "day07/04_rwdGrid\352\263\274\354\240\234.html"
+ create mode 100644 day07/05_style.css
+ create mode 100644 "day07/05_\353\260\230\354\235\221\355\230\225.html"
+ create mode 100644 day07/06_style.css
+ create mode 100644 "day07/06_\352\263\274\354\240\2341.html"
+ create mode 100644 day08/01_index.html
+ create mode 100644 day08/01_style.css
+ create mode 100644 day08/02_shop copy.html
+ create mode 100644 day08/02_shop.html
+ create mode 100644 day08/02_style copy.css
+ create mode 100644 day08/02_style.css
+ create mode 100644 day08/jghbenz.html
+ create mode 100644 day08/jghbenz_style_benz.css
+ create mode 100644 day08/reset.css
+ create mode 100644 "day08/\352\263\274\354\240\234.css"
+ create mode 100644 "day08/\352\263\274\354\240\234.html"
+ create mode 100644 day09_js/01_index.html
+ create mode 100644 day09_js/02_let.html
+ create mode 100644 day09_js/03_dataType.html
+ create mode 100644 day09_js/04_function.html
+ create mode 100644 day09_js/04_function.js
+ create mode 100644 day09_js/05_function2.html
+ create mode 100644 day09_js/06_Object.html
+ create mode 100644 day09_js/07_event.html
+ create mode 100644 day10/01_event_input.html
+ create mode 100644 day10/02_eventEx01.html
+ create mode 100644 day10/03_eventEx02.html
+ create mode 100644 day10/04_eventEx03.html
+ create mode 100644 day10/05_StringMethod.html
+ create mode 100644 "day10/06_\354\210\231\354\240\234.html"
+ create mode 100644 "day10/06_\354\210\231\354\240\234_\354\230\244\353\257\270\353\236\200.html"
+ create mode 100644 day11/01_eventEx.html
+ create mode 100644 "day11/01_eventEx\354\230\244\353\257\270\353\236\200\354\240\225\353\213\265.html"
+ create mode 100644 day11/02_if.html
+ create mode 100644 day11/03_today.html
+ create mode 100644 "day11/03_today\354\230\244\353\257\270\353\236\200\354\240\225\353\213\265.html"
+ create mode 100644 day11/04_eventClass.html
+ create mode 100644 day11/05_Math.html
+ create mode 100644 day11/06_for.html
+ create mode 100644 day11/07_forEx.html
+ create mode 100644 day11/08_forEx01.html
+ create mode 100644 day11/08_forEx02 copy 2.html
+ create mode 100644 day11/08_forEx02 copy.html
+ create mode 100644 day11/08_forEx02.html
+ create mode 100644 "day11_js_\354\247\200\354\230\201/01_eventEx.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/02_if.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/03_today.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/03_today\355\222\200\354\235\264.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/04_eventClass.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/05_Math.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/06_\353\260\230\353\263\265\353\254\270.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/07_forEx.html"
+ create mode 100644 "day11_js_\354\247\200\354\230\201/08_forEx01.html"
+ create mode 100644 "day12_js/01_\353\260\260\354\210\230\354\266\234\353\240\245\355\225\230\352\270\260.html"
+ create mode 100644 "day12_js/02_\352\260\200\354\234\204\353\260\224\354\234\204\353\263\264.html"
+ create mode 100644 "day12_js/03_\354\240\234\352\263\261\352\263\204\354\202\260.html"
+ create mode 100644 day12_js/04_array.html
+ create mode 100644 day12_js/05_array_method.html
+ create mode 100644 day12_js/06_array_sort.html
+ create mode 100644 "day12_js/07_\352\263\274\354\240\234.html"
+ create mode 100644 day13_js/01.html
+ create mode 100644 day13_js/02_combination.html
+ create mode 100644 day13_js/03_Json.html
+ create mode 100644 day13_js/04_array_interator.html
+ create mode 100644 "day13_js/05_\352\263\274\354\240\234.html"
+ create mode 100644 day14_js/01_updown.html
+ create mode 100644 day14_js/02_array_interation.html
+ create mode 100644 day14_js/03_array_method.html
+ create mode 100644 day14_js/04_regular_expression.html
+ create mode 100644 day14_js/05_regexpEx copy.html
+ create mode 100644 day14_js/05_regexpEx.html
+ create mode 100644 "day14_js/06_\352\263\274\354\240\234.html"
+ create mode 100644 day14_js/test.css
+ create mode 100644 day14_js/test.html
+ create mode 100644 day14_js/test.js
+ create mode 100644 day15_js/01_guguEx.html
+ create mode 100644 day15_js/02_set.html
+ create mode 100644 day15_js/03_map.html
+ create mode 100644 day15_js/04_try-catch.html
+ create mode 100644 day15_js/05_count.html
+ create mode 100644 day15_js/06_mapEx copy.html
+ create mode 100644 day15_js/06_mapEx.html
+ create mode 100644 "day15_js/\352\263\274\354\240\234 copy.html"
+ create mode 100644 "day15_js/\352\263\274\354\240\234.html"
+ create mode 100644 day16_js/01_lotto.html
+ create mode 100644 day16_js/02_class.html
+ create mode 100644 day16_js/03_classEx.html
+ create mode 100644 day16_js/04_classEx2.html
+ create mode 100644 day16_js/05_classEx3 copy.html
+ create mode 100644 day16_js/05_classEx3.html
+ create mode 100644 day17_js/01_parameter.html
+ create mode 100644 day17_js/02_JSON.html
+ create mode 100644 day17_js/03_async.html
+ create mode 100644 day17_js/04_async_promiseChain.html
+ create mode 100644 "day17_js/04_async_promiseChain\354\230\244\353\257\270\353\236\200.html"
+ create mode 100644 day17_js/testjgh.html
+ create mode 100644 "day17_js/\352\263\274\354\240\234.html"
+ create mode 100644 "day17_js/\352\263\274\354\240\2342.html"
+ create mode 100644 "day17_js/\352\263\274\354\240\2343.html"
+ create mode 100644 "day17_js/\352\263\274\354\240\2344.html"
+ create mode 100644 "day17_js/\352\263\274\354\240\2345_jgh.html"
+ create mode 100644 "day17_js/\352\263\274\354\240\234\354\240\225\353\213\265\353\214\200\352\270\260\354\244\221.html"
+ create mode 100644 day18_js/01_superHero.html
+ create mode 100644 day18_js/02_non_standard.html
+ create mode 100644 day18_js/03_BOM.html
+ create mode 100644 day18_js/04_window_popup.html
+ create mode 100644 day18_js/05_setTimeOut.html
+ create mode 100644 day18_js/06_setInterval.html
+ create mode 100644 day18_js/07_location.html
+ create mode 100644 day18_js/08_history.html
+ create mode 100644 "day18_js/11_itemList\352\263\274\354\240\234.html"
+ create mode 100644 "day18_js/11_itemList\352\263\274\354\240\234230810.html"
+ create mode 100644 day19_js/01_itemList.html
+ create mode 100644 day19_js/02_DOM.html
+ create mode 100644 day19_js/03_querySelector.html
+ create mode 100644 day19_js/04_attribute.html
+ create mode 100644 day19_js/05_style.html
+ create mode 100644 day19_js/06_classList.html
+ create mode 100644 "day19_js/07_li\354\266\224\352\260\200.html"
+ create mode 100644 "day19_js/12_li\354\266\224\352\260\200 copy.html"
+ create mode 100644 "day19_js/12_li\354\266\224\352\260\200.html"
+ create mode 100644 "day19_js/99_hwcopy3 copy\354\215\234\353\262\204\354\240\204.html"
+ create mode 100644 day19_js/99_hwcopy3.html
+ create mode 100644 "day19_js/\352\263\274\354\240\234.html"
+ create mode 100644 "day19_js/\352\263\274\354\240\234\354\215\234\353\262\204\354\240\204.html"
+ create mode 100644 "day19_js/\354\204\261\355\233\210\353\262\204\354\240\204.html"
+ create mode 100644 day20_js/01_event.html
+ create mode 100644 day20_js/02_event2.html
+ create mode 100644 day20_js/03_event3.html
+ create mode 100644 day20_js/04_keyEvent.html
+ create mode 100644 day20_js/16_.html
+ create mode 100644 "day20_js/\352\263\204\354\202\260\352\270\260 copy.html"
+ create mode 100644 "day20_js/\352\263\204\354\202\260\352\270\260.html"
+ create mode 100644 "day20_js/\353\260\234\355\221\234\352\264\200\353\240\250.txt"
+ create mode 100644 font/Faster_One/FasterOne-Regular.ttf
+ create mode 100644 font/Faster_One/OFL.txt
+ create mode 100644 font/Jua-Regular.ttf
+ create mode 100644 font/Jua/Jua-Regular.ttf
+ create mode 100644 font/Jua/OFL.txt
+ create mode 100644 font/OFL.txt
+ create mode 100644 image.zip
+ create mode 100644 image/Aclass.jpg
+ create mode 100644 image/Aclass.png
+ create mode 100644 image/Cclass.jpg
+ create mode 100644 image/Cclass.png
+ create mode 100644 image/Eclass.jpg
+ create mode 100644 image/Eclass.png
+ create mode 100644 image/GLA.png
+ create mode 100644 image/GLB.png
+ create mode 100644 image/GLC.png
+ create mode 100644 image/GLE.png
+ create mode 100644 image/GLS.png
+ create mode 100644 image/Gclass.jpg
+ create mode 100644 image/Gclass.png
+ create mode 100644 image/Mayba.png
+ create mode 100644 image/Sclass.png
+ create mode 100644 image/benz1.jpg
+ create mode 100644 image/benz2.png
+ create mode 100644 image/bibimbab.jpg
+ create mode 100644 image/cat1.jpg
+ create mode 100644 image/dak.jpg
+ create mode 100644 image/dark.jpg
+ create mode 100644 image/dog1.jpg
+ create mode 100644 image/home.jpg
+ create mode 100644 image/i14363479360.gif
+ create mode 100644 image/keyboard.png
+ create mode 100644 image/kimchijpg.jpg
+ create mode 100644 image/lion1.jpg
+ create mode 100644 image/mainpictur.png
+ create mode 100644 image/math_img_1.jpg
+ create mode 100644 image/math_img_2.jpg
+ create mode 100644 image/math_img_3.jpg
+ create mode 100644 image/moniter.png
+ create mode 100644 image/mouse.png
+ create mode 100644 image/noteb1.png
+ create mode 100644 image/notebook1.png
+ create mode 100644 image/paris.jpg
+ create mode 100644 image/po.jpg
+ create mode 100644 image/room.jpg
+ create mode 100644 image/sam.jpg
+ create mode 100644 image/seoul_img.jpg
+ create mode 100644 image/test.jpg
+ create mode 100644 image/tokyo.jpg
+ create mode 100644 image/tokyotower.jpg
+ create mode 100644 image/travelhome.jpg
+ create mode 100644 image/zzazang.jpg
+ create mode 100644 "image/\352\260\200\354\234\204.jpg"
+ create mode 100644 "image/\353\260\224\354\234\204.jpg"
+ create mode 100644 "image/\353\263\264.jpg"
+ create mode 100644 test/test.html
+ create mode 100644 "\352\271\203\355\227\210\353\270\214\352\264\200\353\240\250.txt"
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (master)
+$ git branch -M main
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (main)
+$ git remote add origin https://github.com/gatsby5959/big0523html.git
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (main)
+$ git push -u origin main
+Enumerating objects: 277, done.
+Counting objects: 100% (277/277), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (276/276), done.
+Writing objects: 100% (277/277), 25.79 MiB | 269.00 KiB/s, done.
+Total 277 (delta 18), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (18/18), done.
+To https://github.com/gatsby5959/big0523html.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+EZEN-217T@DESKTOP-H6G5R0P MINGW64 /d/전경환/_HtmlCssJs (main)
+$

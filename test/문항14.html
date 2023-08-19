@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="myNum">
+    <button onclick="bigThanZero()">0보다크나?</button>
+
+    <script>
+        function bigThanZero() {
+            let inputValue = document.getElementById("myNum").value;
+            if (inputValue <= 0) {
+                console.error("오류검증조건임: 입력된 숫자는 0보다 커야합니다. 오류임");
+            } else {
+                console.log("오류검증조건아님: 입력된 숫자는 0보다 큽니다. 오류 아닙니다.");
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+

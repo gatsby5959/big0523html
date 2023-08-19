@@ -4,7 +4,7 @@ echo "# big0523html" >> README.md
 //깃 초기화 구문
 git init
 //사용자설정
-
+.......(아래 설명 되어잇음 인잇보다 먼저해도 됨)
 //중간저장공간에 전부다(.)넣겠다
 git add .
 //커밋 메시지 작성
@@ -15,6 +15,7 @@ git branch -M main
 git remote add origin https://github.com/gatsby5959/big0523html.git
 //올리기
 git push -u origin main
+
 
 
 //사용자 설정 한 번만 해도 됨
