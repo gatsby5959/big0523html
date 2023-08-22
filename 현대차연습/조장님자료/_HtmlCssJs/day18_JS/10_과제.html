@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="wapper"></div>
+    <h2>
+        여행 점검 준비물 목록
+    </h2>
+    <form action="">
+        <!-- autofocus 커서를 안대도 미리 커서가 깜빡이는 기능 -->
+        <input type="text" id="item" autofocus="true">
+        <button type="button" id="add"> 추가</button>
+    </form>
+    <div>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+
+
+
+        let itemList = [];
+        let addBtn = document.getElementById('add');
+
+
+        addBtn.addEventListener('click', addList);
+
+        function addList() {
+            // item 추가 function
+            let item = document.getElementById('item').value;
+            if (item != null) {
+                itemList.push(item);
+                //값이 추가되고 난 후 input 값을 초기화
+                document.getElementById('item').value = '';
+                //추가 후 포커스 얻기
+                document.getElementById('item').focus();
+            }
+            console.log(itemList);
+            showList();
+        }
+
+        function showList() {
+            // item 표시 function
+            let list = '';
+            for (let i = 0; i < itemList.length; i++) {
+                list += `<li id="list${i}">${itemList[i]}<span class="close" id="${i}"></span></li>`
+
+            }
+            //리스트 내용 표시
+            document.getElementById('itemList').innerHTML = list;
+
+            let remove = document.querySelectorAll('.close');   //span 태그의 close의 배열 형태
+            console.log(remove);
+            //remove 버튼을 클릭하면 removeList()를 호출
+            for (let i = 0; i < itemList.length; i++) {
+                remove[i].addEventListener('click', removeList);
+            }
+        }
+
+        function removeList() {
+            // item 삭제 function
+            let id = this.getAttribute('id'); //this(클릭한 버튼을 의미)
+            console.log(id);
+            itemList.splice(id, 1); //splice => id번지의 값 1개를 잘라내기
+            console.log(itemList);
+            showList();
+        }
+    </script>
+</body>
+
+</html>

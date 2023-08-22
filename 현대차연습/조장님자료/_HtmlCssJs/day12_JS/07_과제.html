@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button type="button" onclick="play(1)">
+        <img src="/image/가위.jpg" alt="">
+    </button>
+    <button type="button" onclick="play(2)">
+        <img src="/image/바위.jpg" alt="">
+    </button>
+    <button type="button" onclick="play(3)">
+        <img src="/image/보.jpg" alt="">
+    </button>
+
+
+    <h3 id="result">
+
+
+    </h3>
+
+    <script>
+
+        let result = 0;
+        let win = 0;
+        let lose = 0;
+        let turn = 0;
+        let tie = 0;
+        let alarm = 0;
+
+        function play(n) {
+
+            turn++;
+            let player = n;
+            let com = Math.floor(Math.random() * 3) + 1;
+            console.log(player, com)
+
+
+            if (com < player) {
+                win++;
+                alarm = '이겼습니다.';
+            } else if (com == player) {
+                tie++;
+                alarm = '비겼습니다.';
+            } else if (player == 1 && com == 3) {
+                win++;
+                alarm = '이겼습니다.';
+            } else if (com > player) {
+                lose++;
+                alarm = '졌습니다.';
+            } else if (player == 3 && com == 1) {
+                lose++;
+                alarm = '졌습니다.';
+            }
+
+            if (n == 1) {
+                player = '가위';
+            } else if (n == 2) {
+                player = '바위';
+            } else {
+                player = '보';
+            }
+
+            if (com == 1) {
+                com = '가위';
+            } else if (com == 2) {
+                com = '바위';
+            } else {
+                com = '보';
+            }
+
+
+
+
+            console.log("승" + win + "무" + tie + "패" + lose)
+
+
+            result = (win / turn) * 100;
+            console.log(result);
+
+
+            document.getElementById('result').innerHTML =
+                `당신 : ${player} <br>
+                컴퓨터 : ${com} <br>
+                ${alarm} <br>
+                승 : ${win} <br>
+                무 : ${tie} <br>
+                패 : ${lose} <br>
+                승률 : ${result} % <br>
+                `;
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

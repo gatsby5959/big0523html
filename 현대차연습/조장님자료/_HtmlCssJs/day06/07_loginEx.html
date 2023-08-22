@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: auto;
+            width: 600px;
+            background-color: rgb(42, 193, 188);
+        }
+
+
+        .login {
+            background-color: aliceblue;
+            border-radius: 10px;
+            margin: 10%;
+            margin-top: 100px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            width: 400px;
+            height: 50px;
+            margin: 20px 0px 0px 0px;
+            padding-left: 10px;
+            font-size: 18px;
+
+        }
+
+        input:focus {
+            background-color: rgb(204, 227, 230);
+        }
+
+        button {
+            width: 412px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 0px 20px 0px;
+            background-color: rgb(42, 193, 188);
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        img {
+            top: 350px;
+            width: 100px;
+            position: absolute;
+            bottom: 5px;
+            right: 50px;
+            z-index: 2;
+        }
+
+        @keyframes move {
+            from {
+                right: 0%;
+            }
+
+            50% {
+                right: 90%;
+            }
+
+            to {
+                right: 0%;
+            }
+
+
+        }
+
+        img {
+            animation-name: move;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        a>.font {
+            padding: 40px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <div class="login">
+            <input type="text" name="id" placeholder="아이디"><br>
+            <input type="password" name="password" placeholder="비밀번호"><br>
+            <button type="submit">로그인</button><br>
+
+            <img src="/image/아이콘_라운드_웹용(저해상도_ RGB).png" alt="">
+            <a href="">
+                <div class="font">비밀번호를 잊어버리셨나요</div>
+            </a>
+
+        </div>
+
+
+    </form>
+
+
+
+
+
+</body>
+
+</html>

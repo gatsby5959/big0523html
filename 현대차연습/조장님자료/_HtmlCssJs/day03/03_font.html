@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font 속성</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+    <style>
+        /* 
+        폰트 지정 : font-family
+        - 지정하려는 폰트를 ,로 나열
+        - 한글폰트인 경우 한글이름, 영문이름으로 같이 사용
+        - 마지막 폰트는 기본형으로 지정 (없을 경우를 대비해 default폰트를 설정)
+            - serif
+        font크기 : font-size
+        font스타일 : font-style
+        font굵기 : font-weight, 100~900 사이의 값을 100단위로 지정(700 default) 
+        
+        font : (font-style font-weight) font-size font-family 여러속성을 한번에 지정
+            - 기본값이 있기때문에 별도로 지정하는 케이스가 많음.
+        */
+        .font {
+            font-family: 'Bagel Fat One', cursive;
+            font-size: 100px;
+            font-style: italic;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="font">
+        안녕하세요~!
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" bordercolor="purple">
+        <thead>
+            <tr>
+                <td colspan="3">회원가입| Member Private Infomation 약관동의 실명확인 회원가입 정보수정</td>
+            </tr>
+            <tr>
+                <td colspan="3">기본정보입력|| 표시는 필수항목이므로 반드시 입력해야 합니다</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>아이디</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="text" name="id"><button type="submit">중복검색</button>영문
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="password" name="password">->재확인<input type="password" name="password">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호 힌트</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="text" name="hint">비번분실-조회시 참고할 내용
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>이름(본명)</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="text" name="name">->한글
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>닉네임(별명)</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="text" name="nickname"><button type="submit">중복검색</button>한글,영문
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>전자메일주소</td>
+                <td><input type="email" name="mail">
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>
+                    <form action="">
+                        <input type="date" name="date">
+                        <input type="radio" name="select" value="lunar" id="lunar">
+                        <label for="lunar">음</label>
+                        <input type="radio" name="select" value="solar" id="solar">
+                        <label for="solar">양</label>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>성 별</td>
+                <td>
+                    <input type="radio" name="gender" id="">남자<input type="radio" name="gender" id="">여자
+                </td>
+                <td>
+                    <input type="checkbox" name="" id="" disabled>비공개
+                </td>
+            </tr>
+            <tr>
+                <td>우편번호</td>
+                <td colspan="3">
+                    <form action="">
+                        <input type="text" name="addr">-<input type="text" name="addr"><button>찾아보기</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td>
+                    <input type="text" name="addr"><br>
+                    <input type="text" name="addr"> <-나머지주소 </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>일반전화 번호</td>
+                <td>
+                    <select name="tel">
+                        <option value="">국번</option><input type="text" name="addr">-<input type="text" name="addr">
+                    </select>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>휴대전화 번호</td>
+                <td>
+                    <select name="tel">
+                        <option value="">010</option><input type="text" name="addr">-<input type="text" name="addr">
+                    </select>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>홈페이지</td>
+                <td>
+                    <input type="text" name="page" value="http://">
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>소개,인사말</td>
+                <td colspan="2">
+                    <textarea name="text" id="" cols="25" rows="8"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    추가정보 입력
+                </td>
+            </tr>
+            <tr>
+                <td>사진첨부</td>
+                <td colspan="2">
+                    <input type="file" name="" id=""><br>
+                    200x200 픽셀 이하 크기만 허용
+                </td>
+            </tr>
+            <tr>
+                <td>이름표시 아이콘</td>
+                <td colspan="2">
+                    <input type="file" name="" id=""> <button>찾아보기</button><br>
+                    25x25 픽셀 이하 크기만 허용
+                </td>
+            </tr>
+            <tr>
+                <td>혼인여부</td>
+                <td>
+                    <form action="">
+                        <input type="radio" name="select1" value="single" id="single">
+                        <label for="single">미혼</label>
+                        <input type="radio" name="select1" value="married" id="married">
+                        <label for="married">기혼</label>
+                        <input type="radio" name="select1" value="divorce" id="divorce">
+                        <label for="divorce">이혼</label>
+                        <input type="radio" name="select1" value="relationship" id="relationship">
+                        <label for="relationship">교제중</label>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>관심분야</td>
+                <td>
+                    <form action="">
+                        <select name="" id="">
+                            <option value="">선택없음</option>
+                        </select>
+                    </form>
+                </td>
+                <td>
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">비공개
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>캐릭터 선택</td>
+                <td colspan="2">
+                    <input type="file" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>메일링 수신거부</td>
+                <td colspan="2">
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">메일링 수신 거부시 체크.
+                    </form>
+                </td>
+
+            </tr>
+            <tr>
+                <td>쪽지 수신거부</td>
+                <td colspan="2">
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">쪽지 수신 거부시 체크.
+                    </form>
+                </td>
+
+            </tr>
+            <tr>
+                <td>전체 비공개</td>
+                <td colspan="2">
+                    <form action="">
+                        <input type="checkbox" name="emailcheck">회원등록정보 전체 비공개시 체크
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3"><button type="submit">입력완료전송</button>
+                    <button type="submit">다시입력하기</button>
+                </th>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 준비물 점검 목록</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(구름.png);
+            Background-size: cover;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            height: 400vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(구름.png);
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+
+
+        }
+
+
+
+        .container::after {
+            content: "";
+            background-color: rgba(255, 255, 255, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 100px;
+            color: rgb(197, 155, 216);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-left: 80px;
+
+        }
+
+        .add_list {
+            display: flex;
+            position: absolute;
+            top: 7.5%;
+
+        }
+
+
+        .tripList {
+            margin-top: 20px;
+            text-align: center;
+            position: absolute;
+            top: 9%;
+            left: 43.3%;
+            transform: translate(-50%);
+            width: 210px;
+
+
+
+        }
+
+        input {
+            border: none;
+            outline: none;
+            height: 42px;
+            width: 300px;
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(142, 176, 221);
+            background-color: transparent;
+            text-align: center;
+            border-bottom: 6px dashed rgb(142, 176, 221);
+            margin-right: 20px;
+
+
+        }
+
+        add_list>button {
+            position: absolute;
+        }
+
+        #list {
+            position: absolute;
+            width: 420px;
+            font-size: 36px;
+            color: rgb(142, 176, 221);
+            font-weight: 600;
+            padding-bottom: 140px;
+
+
+
+        }
+
+
+        button {
+            color: rgb(142, 176, 221);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 750;
+            font-size: 30px;
+
+
+        }
+
+
+        button:hover {
+            color: rgb(197, 155, 216);
+
+
+        }
+
+        .icon-margin {
+
+            margin-left: 10px;
+        }
+
+        .tripList {
+
+            text-align: center;
+            padding-right: 70px;
+
+
+
+        }
+
+        #list_e:nth-child(2n)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 60px;
+            width: calc(80% + 31px);
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.322);
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        #list_e:hover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 60px;
+            width: calc(80% + 31px);
+            height: 60px;
+            background-color: rgba(197, 155, 216, 0.245);
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+
+        #list_e_i {
+            position: absolute;
+            left: 381px;
+            padding-top: 18px;
+
+
+        }
+
+        #list_e {
+            line-height: 60px;
+
+
+            padding-left: -1px;
+            position: relative;
+
+
+
+
+        }
+
+        #add_btn {
+            position: absolute;
+            top: 7.5%;
+            left: 66%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: rgba(197, 155, 216, 0.653);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #add_btn:hover {
+            background-color: rgba(142, 176, 221, 0.653);
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #logout_btn {
+            background-color: rgba(197, 155, 216, 0.653);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        #logout_btn:hover {
+            background-color: rgba(142, 176, 221, 0.245);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="logout">
+            <button id="logout_btn" onclick="logout()">로그아웃</button>
+        </div>
+        <h1>여행 준비물 점검 목록</h1>
+        <div class="add_list">
+            <input type="text" id="add_l">
+            <button type="button" onclick="clear1()"><i class="bi bi-x-lg" id="clear_i"></i></button>
+
+        </div>
+        <div class="tripList">
+            <div id="list"></div>
+
+        </div>
+        <button type="button" onclick="list_a()" id="add_btn">추가</button>
+    </div>
+
+
+    <script>
+        const listArrSet = new Set();
+
+        let add_1 = "";
+
+        let str = "";
+
+
+
+        function delete_l(add_1) {
+
+            listArrSet.delete(add_1)
+            console.log(listArrSet)
+
+
+            listPrint();
+        }
+        function list_a() {
+            const add_1 = document.getElementById("add_l").value;
+            if (add_1 === "") {
+                alert("여행 물품을 입력하지 않았어요!");
+                return;
+            }
+            if (listArrSet.size >= 47) {
+                alert("여행 물품을 더 이상 추가할 수 없어요!");
+                return;
+            }
+
+            let count = 1;
+            let add_l_r = add_1;
+            if (listArrSet.has(add_l_r)) {
+                const confirmation = confirm("중복되는 물품이 있습니다. 덮어쓸까요?(취소를 누르면 물품 옆에 숫자가 생깁니다.)");
+                if (confirmation) {
+                    delete_l();
+                    listArrSet.add(add_l_r);
+                    return;
+                } else {
+                    while (listArrSet.has(add_l_r)) {
+                        add_l_r = `${add_1}(${count})`;
+                        count++;
+                    }
+                }
+            }
+            listArrSet.add(add_l_r);
+            listPrint();
+        }
+
+
+
+
+        function clear1() {
+            const add_e = document.getElementById("add_l");
+            add_e.value = "";
+
+        }
+
+        function listPrint() {
+            let str = "";
+            for (const list1 of listArrSet) {
+                str += `<div id="list_e">${list1}<button type="button" id="list_e_i" onclick="delete_l('${list1}')"><i class="bi bi-x-lg"></i></button></div>`;
+            }
+            document.getElementById("list").innerHTML = str;
+        }
+        function logout() {
+            const confirmation = confirm("로그아웃하시겠습니까?");
+            if (confirmation) {
+
+                alert("로그아웃되었습니다.");
+                window.location.replace("login.html");
+            }
+        }
+    </script>
+</body>
+
+</html>

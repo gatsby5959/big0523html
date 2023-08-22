@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1></h1>
+    <button type="button" onclick="start()"> 문제 출제 </button>
+
+    <h3 id="q">
+
+    </h3>
+    <button type="button" onclick="end()">정답 확인</button>
+
+    <script>
+
+        let answer = [];
+        let cnt = 0;
+
+
+
+        function start() {
+            let gugu = "";
+            let multi = 0;
+            document.getElementById('q').innerHTML = '<ol id="liList"></ol>'
+
+            for (let i = 1; i <= 10; i++) {
+
+                let num1 = Math.floor(Math.random() * 8) + 2;
+                let num2 = Math.floor(Math.random() * 9) + 1;
+
+                gugu = `${num1} * ${num2} = `;
+                multi = num1 * num2;
+                answer.push(multi);
+
+
+                document.getElementById('liList').innerHTML += `<li key=${i}> ${gugu} <input type="text" id='q${i}'></li>`;
+
+            }
+            console.log(answer);
+        }
+
+        function end() {
+            //여기서 document.getElementById('${li태그의 이름}').value = gugu; < 분해해서 여기서 계산을 직접 때리면 
+            //전역answer를 사용하지 않고도 결과를 볼 수 있다~;
+            //eval 함수는 string을 바로 연산할 수 있다. << 이거 해킹당하기 쉬움.
+
+            for (let i = 1; i <= 10; i++) {
+                if (answer[i - 1] == document.getElementById(`q${i}`).value) {
+                    document.getElementById(`q${i}`).style.backgroundColor = 'green';
+                    cnt++;
+                } else {
+                    document.getElementById(`q${i}`).style.backgroundColor = 'red';
+                }
+            }
+            console.log("카운트" + cnt);
+            document.getElementById('q').innerHTML += `정답률: ${cnt * 10}% 입니다.`;
+            cnt = 0;
+            answer = [];
+            console.log(answer);
+        }
+
+    </script>
+
+</body>
+
+
+</html>

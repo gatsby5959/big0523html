@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성</title>
+    <!-- text-indent : 들여쓰기 -->
+    <!-- text-align : 정렬 left, right, center, justify(양쪽) -->
+    <!-- text-decoraton : 밑줄 
+        - none : 없음
+        - underline : 밑줄
+        - overline : 윗줄
+        - line-through : 가운데줄(취소선)
+    -->
+
+    <!--
+        css 표준 단위
+        px : 픽셀
+        % : 퍼센트, 현재값을 기준으로 비율
+        em : 배수, 부모값을 기준으로 배수
+        rem : 배수, 문서(Document)를 기준으로 배수
+        cm : 센치미터
+        mm : 밀리미터
+        in : 인치, 1 in = 96px
+        pt : 포인터, 1 pt = 1/72in (픽셀보다 좀더 큰 단위)
+        pc : 피카소, 1 pc = 12pt 
+        deg : 각도
+     -->
+    <!-- 
+        textoverflow : 텍스트가 범위를 넘어가는 경우
+            - ellipsis(....)
+        white-space : 범위를 벗어나는 영역의 글자처리
+            - nowrap : 한줄로 처리
+        overflow : 요소가 넘어가면 어떻게 처리할 것인지 정하는 속성
+            - hidden : 숨김
+            - scoll : 스크롤 생성
+            - auto : 스크롤 오토 생성 
+      -->
+
+    <style>
+        p {
+            text-indent: 20px;
+            text-align: justify;
+        }
+
+        .line {
+            /* 범위를 넘어갔을 때 ... 처리하는 set */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="line">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut morbi tincidunt augue interdum velit euismod in. Semper feugiat nibh sed pulvinar proin gravida
+        hendrerit.
+        Pharetra magna ac placerat vestibulum. Justo eget magna fermentum iaculis eu. A condimentum vitae sapien
+        pellentesque
+        habitant. Dolor purus non enim praesent elementum facilisis. At imperdiet dui accumsan sit amet nulla facilisi.
+        Purus
+        non enim praesent elementum facilisis leo vel fringilla. Suscipit tellus mauris a diam maecenas sed. Laoreet non
+        curabitur gravida arcu ac tortor dignissim. Consectetur adipiscing elit ut aliquam purus. Mauris commodo quis
+        imperdiet
+        massa tincidunt nunc pulvinar.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut morbi tincidunt augue interdum velit euismod in. Semper feugiat nibh sed pulvinar proin gravida
+        hendrerit.
+        Pharetra magna ac placerat vestibulum. Justo eget magna fermentum iaculis eu. A condimentum vitae sapien
+        pellentesque
+        habitant. Dolor purus non enim praesent elementum facilisis. At imperdiet dui accumsan sit amet nulla facilisi.
+        Purus
+        non enim praesent elementum facilisis leo vel fringilla. Suscipit tellus mauris a diam maecenas sed. Laoreet non
+        curabitur gravida arcu ac tortor dignissim. Consectetur adipiscing elit ut aliquam purus. Mauris commodo quis
+        imperdiet
+        massa tincidunt nunc pulvinar.
+    </p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        div {
+            width: 65px;
+            text-align: center;
+            border-radius: 50%;
+            color: azure;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <button type="button" onclick="start()">랜덤번호 6개 출력하기</button>
+        <h3 id="lottoPrint">
+        </h3>
+        <button type="button" onclick="plusNum()">당첨번호 7개(마지막은 보너스~) 출력하기</button>
+        <h3 id="winnerNum">
+        </h3>
+        <button type="button" onclick="resultBtn()"> 당첨 확인 </button>
+        <h3 id="numResult">
+        </h3>
+        <h3 id="numResult2">
+        </h3>
+        <button type="button" onclick="window.location.reload()"> 다시하기 </button>
+    </form>
+    <script>
+        let player = [];
+        let lotto = [];
+        let dupli = new Set();
+        let lock1 = 0;
+        let lock2 = 0;
+        let lock3 = 0;
+
+        function start() {
+            if (lock1 == 1) {
+                return 0;
+            }
+            while (dupli.size < 6) {
+                dupli.add(Math.floor(Math.random() * 45) + 1);
+            }
+            let cnt1 = 0;
+            dupli.forEach((e, i) => {
+                player[cnt1] = e;
+                cnt1++;
+            })
+            for (let i = 0; i < 6; i++) {
+                document.getElementById('lottoPrint').innerHTML += `<div id="p${i}">${player[i]}</div> `;
+                document.getElementById(`p${i}`).style.backgroundColor += 'green';
+            }
+            dupli.clear();
+
+            lock1++;
+        }
+
+        function plusNum() {
+            if (lock2 == 1) {
+                return 0;
+            }
+            while (dupli.size < 7) {
+                dupli.add(Math.floor(Math.random() * 45) + 1);
+            }
+            let cnt2 = 0;
+            dupli.forEach((e, i) => {
+                lotto[cnt2] = e;
+                cnt2++;
+            })
+            dupli.clear();
+            for (let i = 0; i < 7; i++) {
+                document.getElementById('winnerNum').innerHTML += `<div id="c${i}">${lotto[i]}</div> `;
+                if (i == 6) {
+                    document.getElementById(`c${i}`).style.backgroundColor += 'chocolate';
+                } else {
+                    document.getElementById(`c${i}`).style.backgroundColor += 'green';
+                }
+            }
+            lock2++;
+        }
+
+        function resultBtn() {
+            if (lock3 == 1) {
+                return 0;
+            }
+            let cnt3 = 0;
+            for (let i = 0; i < 6; i++) {
+                document.getElementById('numResult').innerHTML += `<div id="r${i}"> </div>`;
+                document.getElementById(`r${i}`).innerHTML = `${player[i]}`;
+                document.getElementById(`r${i}`).style.backgroundColor = 'red';
+            }
+            for (let i = 0; i < 6; i++) { //컴퓨터
+                for (let j = 0; j < 6; j++) { //플레이어
+                    if (lotto[i] == player[j]) {
+                        cnt3++;
+                        console.log(player[j]);
+                        document.getElementById(`r${j}`).style.backgroundColor = 'green';
+                    }
+                }
+            }
+            switch (cnt3) {
+                case 0:
+                    document.getElementById('numResult2').innerHTML += `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 낙첨.`;
+                    break;
+                case 1:
+                    document.getElementById('numResult2').innerHTML += `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 낙첨.`;
+                    break;
+                case 2:
+                    document.getElementById('numResult2').innerHTML += `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 낙첨.`;
+                    break;
+                case 3:
+                    document.getElementById('numResult2').innerHTML += `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 5등 당첨.`;
+                    break;
+                case 4:
+                    document.getElementById('numResult2').innerHTML += `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 4등 당첨.`;
+                    break;
+                case 5:
+                    for (let i = 0; i < 6; i++) {
+                        if (lotto[6] == player[i]) {
+                            document.getElementById('numResult2').innerHTML = `<br> 맞은번호 갯수는 보너스번호 포함 ${cnt3}개입니다. <br>
+결과 : 2등 당첨.`;
+                            document.getElementById(`r${i}`).style.backgroundColor = 'chocolate';
+                            return 0;
+                        }
+                    }
+                    document.getElementById('numResult2').innerHTML = `<br> 맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 3등 당첨.`;
+                    break;
+                case 6:
+                    document.getElementById('numResult2').innerHTML = `맞은번호 갯수는 ${cnt3}개입니다. <br>
+결과 : 1등 당첨.`;
+                    break;
+            }
+            lock3++;
+        }
+    </script>
+</body>
+
+</html>

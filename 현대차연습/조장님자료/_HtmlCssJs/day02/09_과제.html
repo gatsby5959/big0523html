@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 연습문제</title>
+    <style>
+        #naver {
+            color: rgb(255, 255, 255);
+            background-color: rgb(40, 202, 81);
+            background-position: 500px 500px;
+            text-align: center;
+
+            font-size: 30px;
+        }
+
+        .google {
+            color: rgb(255, 255, 255);
+            background-color: rgb(216, 76, 134);
+            text-align: center;
+            font-size: 30px;
+        }
+
+        div {
+            color: rgb(255, 255, 255);
+            background-color: rgb(170, 53, 238);
+            text-align: center;
+            font-size: 30px;
+        }
+
+        ul {
+            text-align: center;
+            font-size: 25px;
+            list-style-type: none;
+
+        }
+
+        a {
+            text-decoration-line: none;
+
+        }
+
+        li {
+            font-size: 50px;
+            display: inline;
+            margin: 20px;
+        }
+
+        li:nth-child(even) {
+            color: coral;
+        }
+
+        li:nth-of-type(3n) {
+            color: blueviolet;
+        }
+
+        li:first-child,
+        li:last-child {
+            font-weight: bold;
+        }
+
+        li:hover {
+            color: rgb(55, 0, 255);
+        }
+
+        table {
+            width: 500px;
+            margin: auto;
+        }
+
+        /* 
+        after : 뒤에 붙이는 가상 값
+        before : 전에 붙이는 가상 값
+
+        */
+
+        li::after {
+            color: black;
+            font-weight: 100;
+            content: "|"
+        }
+
+        li::before {
+            color: black;
+            font-weight: 100;
+            content: "|"
+        }
+    </style>
+
+
+
+
+</head>
+<!-- 
+        div 3개를 만들어
+        naver, google, daum 사이트 연결
+        각 div는 색깔과 모양을 달리 스타일 주기.
+        color : 글자색
+        background-color : 면색
+        폰트 관련 스타일들.
+
+        링크 클릭했는지에 따라서 글꼴 색이 달라지는 가상선택자가 있음.
+        (의사 선택자)
+        a:active(클릭할때 색)
+        a:visited(링크를 눌러본 후 색)
+        a:link(방문전)
+     -->
+
+<!-- 
+        ul -> li 태그 10개 성성
+        전체 글자크기 크게(일정하게)
+        짝수색 변경
+        3 6 9 : 색상 초록색 변경
+        1 10 : 굵게
+        :hover
+      -->
+
+<body>
+    <table>
+        <tr>
+            <th>
+                <a href="http://www.naver.com" target="_blank">
+                    <div id="naver">naver</div><br>
+                </a>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a href="http://www.google.com" target="_blank">
+                    <div class="google">google</div><br>
+                </a>
+
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <a href="http://www.daum.net" target="_blank">
+                    <div>daum</div><br>
+                </a>
+            </th>
+        </tr>
+
+    </table>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>React</li>
+        <li>JAVA</li>
+        <li>Spring</li>
+        <li>Pyton</li>
+        <li>Django</li>
+        <li>Lua</li>
+        <li>Rust</li>
+    </ul>
+
+</body>
+
+</html>

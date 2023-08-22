@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box 속성</title>
+    <!-- 
+        box 
+        width : 가로길이
+        box-sizing : box의 크기를 지정하는 속성
+        margin : box의 바깥여백
+        padding : box의 안쪽여백
+        box-sizing에 따라 width의 크기가 컨텐츠 자체의 가로가 될수도 있고,
+        박스 전체의 가로가 될 수도 있음.
+        - border-box => width = 컨텐츠의 가로 + padding + border
+        - content-box => width = 컨텐츠의 가로
+        ex) width = 100px / padding = 5px / border = 1px
+        border-box => 88 + 5 + 5 + 1 + 1 = 100px     일반적으로 border-box를 많이 사용
+        content-box => 100 + 5 + 5 + 1 + 1 = 112px
+        
+        
+     -->
+    <style>
+        .box1 {
+            /* 100px = 1 + 1 + 20 + 20 + 남은 width는 58px */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            /* 100px = 1 + 1 + 20 + 20 = 총 142px */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: content-box;
+        }
+
+        /* box를 클릭하면 naver로 이동하는 버튼 div로 만들기 */
+        .box3 {
+            width: 500px;
+            height: 60px;
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-radius: 4px;
+            background-color: #03c75a;
+            box-sizing: content-box;
+            box-shadow: rgba(3, 199, 90, .12);
+            font-size: 25px;
+            font-weight: 500;
+            color: aliceblue;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+            line-height: 50px;
+        }
+
+
+        a {
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+    <a href="http://www.naver.com" target="_blank">
+        <div class="box3">
+            NAVER
+        </div>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Courier, monospace, cursive;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        div {
+            width: 100%;
+            color: white;
+        }
+
+        .main {
+            position: relative;
+            height: 900px;
+            background-image: url(/image/car1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+        .header {
+            position: absolute;
+            left: 50px;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .menu {
+            position: absolute;
+            right: 100px;
+            list-style-type: none;
+
+        }
+
+        .menu>li {
+            float: left;
+            margin: 10px;
+
+
+        }
+
+        a {
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+        }
+
+        .title {
+
+            position: absolute;
+            top: auto;
+            bottom: 30%;
+
+
+        }
+
+        .title>p {
+            font-size: 50px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 80px;
+            border: 3px solid rgb(10, 108, 255);
+            font-weight: 500;
+            border-radius: 20px;
+            background-color: transparent;
+            font-size: 15px;
+            color: white;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 255, 255, 0.473);
+
+        }
+
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.473);
+            -webkit-transform: scaleY(.3);
+            transform: scaleY(.3);
+            opacity: 0;
+            transition: all .3s
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="">
+        <div class="main">
+            <div class="header">
+                <p>DESIGN</p>
+            </div>
+
+
+            <ul class="menu">
+
+                <li><a href="">HOME</a></li>
+
+                <li><a href="">LOGIN IN</a></li>
+
+                <li><a href="">SIGN UP</a></li>
+
+                <li><a href="">BOARD</a></li>
+            </ul>
+
+            <div class="title">
+                <p>Welcome to Front-End <br>
+                    World! <br>
+
+                    <button>Learn More</button>
+                </p>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map 예제</title>
+</head>
+
+<body>
+    <!-- 
+
+        input 버튼 2개 
+        과목, 점수
+        추가버튼 => map 추가
+        출력 버튼 => map을 출력 ul=li로 출력
+        결과버튼 => 합계, 평균, 평가 (80이상이면 통과 , 아니면 탈락) => h3
+     -->
+
+    <input type="text" id="sub">
+    <input type="text" id="score"> <br>
+    <button type="button" onclick="incre()">추가</button>
+    <button type="button" onclick="start()">출력</button>
+    <button type="button" onclick="end()">결과</button>
+
+    <ul id="scores"></ul>
+    <h3 id="result"></h3>
+
+    <script>
+        let myScores = new Map();
+
+        let avg = 0;
+
+
+
+
+        function incre() {
+            return myScores.set(`${document.getElementById('sub').value}`,
+                `${parseInt(document.getElementById('score').value)}`);
+        }
+
+        function start() {
+            for (const iter of myScores.entries()) {
+                document.getElementById('scores').innerHTML += `<li>${iter}</li>`;
+            }
+        }
+
+        function end() {
+            let sum = 0;
+            let cnt = 0;
+            myScores.forEach((e, i) => {
+                sum += parseInt(e);
+                console.log(e);
+                cnt++;
+            })
+
+            let avg = sum / cnt;
+            document.getElementById('scores').innerHTML += `<li>총합: ${sum},평균: ${avg}</li>`;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

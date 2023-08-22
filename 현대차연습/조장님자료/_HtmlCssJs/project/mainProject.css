@@ -1,0 +1,151 @@
+@import url(reset.css);
+
+body {
+    width: 100%;
+
+}
+
+
+header {
+    position: fixed;
+}
+
+.container {
+
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+.container2 {
+    background-color: rgb(242, 242, 242);
+    height: 80px;
+    text-align: center;
+
+
+}
+
+#mainLogo {
+    margin-top: 10px;
+}
+
+#boxContainer {
+    display: flex;
+
+}
+
+.loginContainer {
+    display: flex;
+}
+
+#inputSearch {
+    position: relative;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    margin: 10px 20px;
+    width: 500px;
+    height: 40px;
+}
+
+.bi1,
+.bi2 {
+    cursor: pointer;
+}
+
+
+
+.bi1 {
+
+
+    position: absolute;
+    margin-top: 32px;
+    right: 37%
+}
+
+.bi2 {
+    color: rgb(189, 189, 189);
+    position: absolute;
+    margin-top: 32px;
+    right: 39%
+}
+
+#boxContainer>li,
+.loginContainer>li {
+    margin-top: 15px;
+    cursor: pointer;
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+.mainPage {
+    overflow: hidden;
+
+}
+
+.leftBi,
+.rightBi {
+    color: gray;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.leftBi {
+    position: absolute;
+    left: 5%;
+    top: 45%;
+}
+
+.rightBi {
+    position: absolute;
+    right: 5%;
+    top: 45%;
+}
+
+.page1 {}
+
+#dc1 {
+    top: 290px;
+    left: 300px;
+}
+
+#dcBgc1 {
+    top: -15px;
+}
+
+#dc1,
+#dcBgc1 {
+    position: absolute;
+    z-index: -10;
+}
+
+
+.page2 {
+    position: absolute;
+    right: 0%
+}
+
+#dc2 {
+    top: 290px;
+
+}
+
+#dcBgc2 {
+    top: -15px;
+
+}
+
+#dc2,
+#dcBgc2 {
+    z-index: -10;
+    position: absolute;
+
+}

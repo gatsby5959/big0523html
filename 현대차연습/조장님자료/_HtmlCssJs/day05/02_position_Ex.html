@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main-box {
+            width: 100%;
+            /* a태그는 inline 태그이기 때문에 크기와 넓이를 가질수 없음  */
+            display: inline-block;
+            border-bottom: none;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .box {
+            margin-right: 10px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            text-decoration: none;
+            background-color: rgb(156, 28, 28);
+        }
+
+
+        .box:hover {
+            margin: 10px 10px;
+            background-color: rgb(165, 112, 112);
+
+        }
+
+        div {
+            color: aliceblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+</body>
+
+
+<div class="main-box">
+    <!-- #은 호출을 막는 기능 -->
+    <a href="#" class="box">
+        <div>T</div>
+    </a>
+    <a href="#" class="box">
+        <div>H</div>
+    </a>
+    <a href="#" class="box">
+        <div>A</div>
+    </a>
+    <a href="#" class="box">
+        <div>N</div>
+    </a>
+    <a href="#" class="box">
+        <div>K</div>
+
+    </a>
+    <a href="#" class="box">
+        <div>S</div>
+    </a>
+
+</div>
+
+
+
+
+</html>

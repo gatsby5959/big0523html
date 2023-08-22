@@ -1,0 +1,91 @@
+@import url(reset.css);
+
+body {
+    margin: auto;
+    width: 80%;
+
+}
+
+.header {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    background-color: gray;
+}
+
+.main {
+    box-sizing: inherit;
+    margin-top: 50px;
+    height: 100vh;
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgba(33, 36, 82, 0.5)), url(/image/서울.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loading {
+    background-color: white;
+    width: 600px;
+    height: 250px;
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 4;
+}
+
+.text1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 50px;
+    color: black;
+}
+
+.text1 p {
+    margin: 5px;
+}
+
+.text1 .p2 {
+    margin-bottom: 30px;
+}
+
+.text2 {
+    width: 612px;
+    top: 250px;
+    position: absolute;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+
+}
+
+
+
+
+.text3 {
+    width: 642px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 68%;
+    font-size: 10px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(226, 226, 226);
+    text-align: center;
+    color: black;
+    z-index: 3;
+}
+
+.text3 p {
+    margin-top: 5px;
+}
+
+hr {
+    height: 1px;
+    background-color: rgb(112, 112, 112);
+}

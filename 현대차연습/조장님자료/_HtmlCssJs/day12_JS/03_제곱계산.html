@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>
+        a의 b제곱을 구하라 : Math.pow(a,b);
+        <button type="button" id="btn">계산 </button>
+    </h1>
+
+    a: <input type="text" id="a">
+    b: <input type="text" id="b">
+    <h3 id="result">
+        <!-- a의 b제곱 -->
+    </h3>
+
+    <script>
+
+        document.getElementById('btn').addEventListener('click', () => {
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            console.log(a, b)
+
+
+            document.getElementById('result').innerText = `${a}의 ${b} 제곱은? ${Math.pow(a, b)}`;
+        })
+
+    </script>
+</body>
+
+</html>

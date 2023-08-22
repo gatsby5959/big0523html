@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        이벤트 객체는 전역객체로써 모든 태그에 객체를 참조시킬 수 있다.
+    </h1>
+    <ul>
+        <li>
+            a태그와 buttton 태그에 이벤트를 주로 참조시켜 클릭에 대한 반응을 기대하게
+            만드는 구조가 일반적임
+        </li>
+        <li>
+            a태그는 href 속성에 의해 자체 이동이 구현되어 있기 때문에
+            이동을 막는 코드가 필요. ex) href="#"
+        </li>
+        <li>
+            화면에 출력 영역 document영역(객체)라고 한다
+        </li>
+        <li>
+            태그는 html element, 속성 attribute, 일반 텍스트는 textNode라고 한다.
+        </li>
+        <li>
+            html로 출력 : innerHTML라는 property를 사용
+        </li>
+        <li>
+            text로 출력 : innerText라는 property를 사용
+        </li>
+        <li>
+            객체의 값을 가져올때 (id) : getElementById("id명");
+        </li>
+        <li>
+            객체의 값을 가져올때 (class) : querySelector("selector");
+        </li>
+    </ul>
+
+
+    <button type="button" onclick="eventFunc()">클릭1</button>
+    <button type="button" onclick="eventFunc1('클릭2')">클릭2</button>
+    <button type="button" onclick="alert('경고창 ')">alert</button>
+    <button type="button" id="testBtn">testButton</button>
+    <button type="button" id="testBtn2">testButton</button>
+    <button type="button" onclick="eventFunc2('div')"> 클릭3 </button>
+    <h1 id="printResult">
+
+        
+
+    </h1>
+
+    <script>
+        function eventFunc() {
+            let printResult = document.getElementById("printResult");
+            printResult.innerText = "클릭1번 버튼을 누르셨네요.";
+        }
+
+        function eventFunc1(num) {
+            let printResult = document.getElementById("printResult");
+            printResult.innerHTML = `<span style="color: red"> 스팬태그를 사용했습니다. ${num}</span>`;
+        }
+
+        //이벤트 리스너 달기
+        document.getElementById("testBtn").addEventListener('click', () => {
+            alert('testButton을 클릭해서 띄운 alert!!')
+        });
+        // click << string이잖아? 이게 어떤거냐면 어떤 이벤트에 이벤트를 지정할것인가
+        // click이라는 이벤트에 람다함수를 넣겠다. 그 람다 함수는 alert 텍스를 띄운다.
+
+        function eventFunc2(tag) {
+            let printResult = document.getElementById("printResult");
+            printResult.innerHTML = `<div style="color: red"> ${tag}태그를 사용했습니다. </div>`;
+        }
+        const testArr = [1,2,3,4,5];
+
+        const mappingTest = (arr) => {
+            return arr.map((val)=> val*2);
+        }; 
+        // js에서는 흔하게 쓰이는 화살표 함수. 이것도 모던자바스크립트 사이트에 화살표 함수라는 큰 차이가 하나 있는데 
+        // this바인딩이 일반 함수와 다름.
+        // this만 무조건 window(global);
+        // 초기부터 동적으로 만들어졌고, 이 람다함수가 나온건 사실 10년이 채 안된다.
+
+        // babel << 최근 문법을 과거 문법으로 변형시켜주는 모듈. 자바스크립트는 만들어 져있는 웹사이트가 너무나도 많아서
+        // 기능을 삭제를 못함.
+        function mappingTest2 (arr) { 
+            return arr.map(function(val) {
+                return val*2;
+            })
+        }
+
+        const result = mappingTest(testArr);
+
+        const obj = {
+
+        }
+
+        // 이 함수는 eventFunc2를 람다함수로 변경한 예제 입니다. 까고보면 그냥 함수이지만 람다로 짠거 뿐임.
+        const test = (tag) => {
+            let printResult = document.getElementById("printResult");
+            printResult.innerHTML = `<div style="color: red"> ${tag}태그를 사용했습니다. </div>`;
+        }
+        test();
+
+
+        
+        document.getElementById("testBtn2").addEventListener('click', () => {
+            eventFunc2()
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

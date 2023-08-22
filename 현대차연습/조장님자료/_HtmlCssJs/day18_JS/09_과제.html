@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Stylish&display=swap" rel="stylesheet">
+
+
+    <style>
+        @font-face {
+            font-family: "Marvel";
+            font-weight: 500;
+            src: url("/font/kung-fu-master-font/KungFuMasterCondensed-PK10P.otf") format("woff2");
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-family: 'Stylish', sans-serif;
+            color: rgb(70, 70, 70);
+            font-size: 40px;
+        }
+
+        body {
+            width: 100%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        body>#test {
+            position: relative;
+            text-align: center;
+            margin: auto;
+            width: 800px;
+            background: linear-gradient(to left bottom, #e9e7e7, #d0d0d8);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: -16px;
+        }
+
+        .bi-plus-square {
+            color: rgb(61, 61, 61);
+            top: 28px;
+            right: 85px;
+            position: absolute;
+            font-size: 35px;
+
+        }
+
+        .bi-trash {
+            color: rgb(66, 66, 66);
+            top: 28px;
+            right: 25px;
+            position: absolute;
+            font-size: 37px;
+        }
+
+        #todo {
+            display: inline;
+            width: 600px;
+            height: 30px;
+            font-weight: 600;
+            caret-color: rgb(61, 61, 61);
+            outline: none;
+            border-color: #fcfcfc;
+            box-shadow: 0 0 10px #9c9c9c;
+        }
+
+        #search {
+            font-family: 'Anton', sans-serif;
+            position: absolute;
+            color: rgb(85, 85, 85);
+            left: 30px;
+            bottom: 30px;
+            font-size: 25px;
+        }
+
+        li>span:hover {
+            transform: scale(1.02);
+        }
+
+        li>span {
+            font-family: 'Anton', sans-serif;
+            font-family: 'Stylish', sans-serif;
+            color: rgb(66, 66, 66);
+            font-size: 30px;
+            font-weight: 600;
+            width: 800px;
+            border-bottom: 2px solid rgb(185, 185, 185);
+            border-right: 2px solid rgb(209, 209, 209);
+            border-radius: 10px;
+            padding: 30px;
+            margin-right: 40px;
+            text-align: left;
+        }
+
+
+        li {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+
+        }
+
+        #insertBtn {
+            border: none;
+            background-color: transparent;
+        }
+
+        .btn {
+            color: rgb(175, 175, 175);
+            float: right;
+            border: none;
+            background-color: transparent;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        여행 준비물 점검 목록
+    </h1>
+    <div id="test">
+        <span id="search">search</span>
+        <input type="text" id="todo" onkeypress="enter_event()">
+        <button type="submit" id="insertBtn" onclick="insert()"><i class="bi bi-plus-square"></i></button>
+        <button type="submit" id="insertBtn" onclick="resets()"><i class="bi bi-trash"></i></button>
+    </div>
+
+    <ul id="todoList">
+    </ul>
+
+    <script>
+        let todoli = [];
+
+
+
+        //enter로 입력
+        function enter_event() {
+            if (window.event.keyCode == 13) {
+                insert();
+            }
+        }
+
+        //입력후 input reset
+        function resets() {
+            todoli.length = 0;
+            document.getElementById('todoList').innerHTML = '';
+        }
+
+        //입력
+        function insert() {
+            let todoInput = document.getElementById('todo').value;
+            let tl = document.getElementById('todoList');
+            todoli.push(todoInput);
+            document.getElementById('todoList').innerHTML = '';
+
+            if (todoli.length >= 10) {
+                filters();
+            }
+
+            for (let i = 0; i < todoli.length; i++) {
+                if (todoli[i] == null) {
+                } else {
+
+                    document.getElementById('todoList').innerHTML +=
+                        `<li id="${i}"> <span>${todoli[i]}<button type="button" class="btn" onclick="delete1(${i})">X</button></span> </li>`;
+                }
+            }
+
+            document.getElementById('todo').value = null;
+        }
+
+
+        //삭제
+        function delete1(index) {
+            todoli[index] = null;
+            document.getElementById(`${index}`).innerHTML = '';
+
+        }
+
+        //배열 10줄 이상이면 메모리 삭제
+        function filters() {
+            let test = todoli.filter(e => e != null);
+            todoli = test;
+        }
+
+    </script>
+
+</body>
+
+</html>

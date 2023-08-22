@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hi {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        오늘은?
+    </h1>
+    <button type="button" id="btn">Today</button>
+    <h3 id="result" class="">
+        <!-- 오늘 날짜와 요일 -->
+    </h3>
+
+    <script>
+
+
+        const btn = document.getElementById('btn');
+        btn.onclick = function () {
+
+            document.getElementById('result').classList.toggle('hi');
+        }
+
+        let now = new Date();
+        let date = now.toLocaleString
+        let day = now.getDay();
+        let week;
+        switch (day) {
+            case 0: day = '일요일'; break;
+            case 1: day = '월요일'; break;
+            case 2: day = '화요일'; break;
+            case 3: day = '수요일'; break;
+            case 4: day = '목요일'; break;
+            case 5: day = '금요일'; break;
+            case 6: day = '토요일'; break;
+            default: console.log('잘못 입력하셨습니다.');
+        }
+
+
+        // let today = new Date();
+        // let day1 = today.getDay();
+        // switch (day1) {
+        //     case 0: day1 = '일요일'; break;
+        //     case 1: day1 = '월요일'; break;
+        //     case 2: day1 = '화요일'; break;
+        //     case 3: day1 = '수요일'; break;
+        //     case 4: day1 = '목요일'; breㅁak;
+        //     case 5: day1 = '금요일'; break;
+        //     case 6: day1 = '토요일'; break;
+        //     default: console.log('잘못 입력하셨습니다.');
+        // }
+
+        // function on() {
+
+        //     document.getElementById('input').innerText =
+        //         `${today.toLocaleDateString()} (${day1})`;
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>

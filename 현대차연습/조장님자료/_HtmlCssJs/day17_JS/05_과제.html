@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        @font-face {
+            font-family: "Marvel";
+            font-weight: 500;
+            src: url("/font/kung-fu-master-font/KungFuMasterCondensed-PK10P.otf") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Marvel1";
+            font-weight: 500;
+            src: url("/font/kung-fu-master-font/KungFuMaster3D-rg5MB.otf") format("woff2");
+        }
+
+        @font-face {
+            font-family: "Marvel2";
+            font-weight: 500;
+            src: url("/font/kung-fu-master-font/KungFuMasterBold-2OdpW.otf") format("woff2");
+        }
+
+
+
+        body {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            background-image: url(/image/마블.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: "Marvel";
+        }
+
+
+        body>#main {
+
+            background-color: rgba(79, 71, 187, 0.616);
+
+            width: 900px;
+            margin: 80px auto;
+            color: aliceblue;
+            font-size: 150px;
+
+        }
+
+        #box1>h3,
+        #box2>h3,
+        #box3>h3 {
+            font-size: 40px;
+            font-style: oblique;
+            background: linear-gradient(to right top, #84d9df, #ca6fff);
+            color: transparent;
+            -webkit-background-clip: text;
+
+        }
+
+        #box1>p,
+        #box2>p,
+        #box3>p {
+            font-size: 20px;
+            font-style: oblique;
+            background: linear-gradient(to right top, #ffffff, #4f5cd1);
+            color: transparent;
+            -webkit-background-clip: text;
+
+        }
+
+
+
+
+        body>#sub {
+            font-family: "Marvel1";
+            color: rgb(252, 252, 252);
+            font-size: 60px;
+            background: linear-gradient(to right top, #ebbfe0, #5493ff);
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        body>#boxs {
+
+            display: flex;
+            text-align: center;
+            margin: auto;
+
+        }
+
+        #box1,
+        #box2,
+        #box3 {
+            font-family: "Marvel2";
+            margin: 150px;
+            font-size: 25px;
+            background: linear-gradient(to right top, #be5194, #83d3dd);
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="main"></h1>
+    <h3 id="sub"></h3>
+    <div id="boxs">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+    </div>
+
+    <script>
+        awaitEx();
+        async function awaitEx() {
+
+            const resp = await fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+            const obj = await resp.json();
+            const objKeys = Object.keys(obj);
+
+            console.log(obj);
+
+            let box1 = document.getElementById('box1');
+            let box2 = document.getElementById('box2');
+            let box3 = document.getElementById('box3');
+
+            document.getElementById('main').innerHTML += `${obj.squadName}`;
+            document.getElementById('sub').innerHTML += `${objKeys.find((key) => key == 'homeTown')}: `;
+            document.getElementById('sub').innerHTML += `${obj.homeTown} // 
+            ${objKeys.find((key) => key == 'formed')} : 
+            ${obj.formed}`;
+            box1.innerHTML += `<h3>${obj.members[0].name}</h3>`;
+            box1.innerHTML += `secretIdentity : ${obj.members[0].secretIdentity} <br> age : ${obj.members[0].age} `;
+            box1.innerHTML += `<p>◈super powers</p><li>${obj.members[0].powers[0]}</li>`;
+            box1.innerHTML += `<li>${obj.members[0].powers[1]}</li>`;
+            box1.innerHTML += `<li>${obj.members[0].powers[2]}</li>`;
+            box2.innerHTML += `<h3>${obj.members[1].name}</h3>`;
+            box2.innerHTML += `secretIdentity : ${obj.members[1].secretIdentity} <br> age : ${obj.members[1].age} `;
+            box2.innerHTML += `<p>◈super powers</p><li>${obj.members[1].powers[0]}</li>`;
+            box2.innerHTML += `<li>${obj.members[1].powers[1]}</li>`;
+            box2.innerHTML += `<li>${obj.members[1].powers[2]}</li>`;
+            box3.innerHTML += `<h3>${obj.members[2].name}</h3>`;
+            box3.innerHTML += `secretIdentity : ${obj.members[2].secretIdentity} <br> age : ${obj.members[2].age} `;
+            box3.innerHTML += `<p>◈super powers</p><li>${obj.members[2].powers[0]}</li>`;
+            for (let i = 1; i <= 4; i++) {
+                box3.innerHTML += `<li>${obj.members[2].powers[i]}</li>`;
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

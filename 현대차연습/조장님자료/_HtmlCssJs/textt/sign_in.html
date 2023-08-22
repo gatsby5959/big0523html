@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=M+PLUS+1p:wght@700&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+KR:wght@500&family=Vina+Sans&display=swap" rel="stylesheet">
+    <style>
+            body {
+ 
+ background-color: rgba(142, 176, 221, 0.153);
+
+
+}
+
+      .sign{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: rgba(214, 183, 217, 0.225);
+            justify-content: center;
+        width: 800px;
+        height: 500px;
+font-size: 30px;
+     text-align: center;
+     line-height: 100px;
+
+     color:  rgb(142,176,221);
+     
+      }
+
+      #check{
+
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+
+
+      }
+
+      #sum{
+
+
+color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+margin-left: 500px;
+
+
+}
+
+input {
+    border: none;
+    outline: none;
+    height: 35px;
+    width:300px;
+    font-size: 26px;
+    color:  rgb(142,176,221);
+    background-color:  rgba(214, 183, 217, 0.167);
+
+}
+
+#title {
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: rgba(88, 109, 136, 0.865); 
+        border-radius: 25px; 
+        width: 200px; 
+        height: 60px;
+        line-height: 60px;
+        margin: 0 auto;
+font-size: 40px;
+background-color: rgb(210,184,223);
+       margin-top: 5%;
+      }
+
+      .box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: rgba(214, 183, 217, 0.225);
+            justify-content: center;
+        width: 800px;
+        height: 500px;
+font-size: 30px;
+     text-align: center;
+     line-height: 100px;
+     color:  rgb(142,176,221);
+        
+    }
+
+    .sub{
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+
+    }
+
+    .box_c{
+        display: none;
+    }
+
+
+    #login_t{
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: rgba(88, 109, 136, 0.865); 
+        border-radius: 25px; 
+        width: 200px; 
+        height: 60px;
+        line-height: 60px;
+        margin: 0 auto;
+font-size: 40px;
+position: relative;
+background-color: rgb(210,184,223);
+       margin-top: -13%;
+       margin-bottom: 140px;
+    }
+
+#login_s{
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+margin: 20px;
+
+    }
+
+    
+#login__s_s{
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+margin: 20px;
+
+    }
+    </style>
+</head>
+<body>
+    <h1 id="title">회원가입</h1>
+    <div class="sign">
+        이름 : <input type="text" id="name"><br>
+        아이디 : <input type="text" id="id"> <button type="button" id="check" onclick="check()">중복확인</button><br>
+        비밀번호: <input type="password" id="password"><br>
+        비밀번호 확인: <input type="password" id="password_r"><br>
+        <div id="submit"></div>
+    </div>
+<div class="box_c">
+    <div class="box">
+        
+        <h1 id="login_t">로그인</h1>
+        <div class="sub">
+        <input type="text" placeholder="id" id="id"><br>
+        <input type="password" placeholder="password" id="password"><br>
+        <button type="button" onclick="login()" id="login_s">로그인</button>
+            <button type="button" onclick="sign()" id="login__s_s">회원이 아니신가요?</button>
+        </div>
+    </div>
+    <script>
+        const customer = new Map();
+        const submitDiv = document.getElementById('submit');
+
+        function check() {
+            const id = document.getElementById('id').value;
+
+            if (customer.has(id)) {
+                alert('이미 있는 아이디입니다.');
+                return false;
+            } else if (id === '') {
+                alert('아이디를 입력하세요.');
+                return false;
+            } else {
+                alert('사용할 수 있는 아이디입니다.');
+                checkSignIn();
+                return true;
+            }
+        }
+
+        function checkSignIn() {
+            submitDiv.innerHTML = `<button type="button" id="sum" onclick="submit()">회원가입</button>`;
+        }
+
+        function submit() {
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const password_r = document.getElementById('password_r').value;
+
+    
+
+            if (password !== password_r) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+            else if(password=== ""){
+                alert('비밀번호가 비어있습니다.');
+                return;
+            }
+
+            
+
+            customer.set(id,{name, password });
+            alert('회원가입이 완료되었습니다.');
+            submitDiv.innerHTML = `<button type="button" id="sum" onclick=" login_c()">로그인하러가기</button>`;
+          
+
+            
+        }
+
+        function  login_c() {
+    document.querySelector('.sign').style.display = 'none';
+    document.querySelector('#title').style.display = 'none';
+    document.querySelector('.box_c').style.display = 'block';
+}
+
+function login() {
+    const user = document.getElementById("id").value;
+    const password = document.getElementById("password").value;
+
+    if (customer.has(user)) {
+        if (customer.get(user).password === password) {
+            window.location.replace("03_과제.html");
+         
+        } else {
+            alert('비밀번호가 일치하지 않습니다.');
+        }
+    } else {
+        alert('존재하지 않는 아이디입니다.');
+    }
+}
+function sign(){
+    window.location.assign("sign_in_c.html");
+}
+        
+    </script>
+</body>
+</html>

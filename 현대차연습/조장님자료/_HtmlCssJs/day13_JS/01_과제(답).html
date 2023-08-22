@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="play(1)">
+        <img src="/image/가위.jpg" alt="">
+    </button>
+    <button type="button" onclick="play(2)">
+        <img src="/image/바위.jpg" alt="">
+    </button>
+    <button type="button" onclick="play(3)">
+        <img src="/image/보.jpg" alt="">
+    </button>
+
+
+    <h3 id="result">
+
+
+    </h3>
+
+
+    <script>
+
+
+        //컴퓨터 랜덤값 생성
+        setComState();
+
+        setDistinch();
+
+        setComState();
+
+
+        function setComstate() {
+
+        }
+
+        //결과 출력 모영 <br> == \n 줄바꿈
+        function showResult() {
+            let aa = '';
+            let winRate = 0;
+            switch (result) {
+                case 0:
+                    draw++;
+                    winRate = getWinRate();
+                    aa = '무승부입니다.'
+                    break;
+
+                case 1:
+                    win++;
+                    winRate = getWinRate();
+                    aa = '이겼습니다.'
+                    break;
+                case -1:
+                    lose++;
+                    winRate = getWinRate();
+                    aa = '졌습니다.'
+                    break;
+
+            }
+            r1 = `player : ${playerStateChar} / com : ${comStateChar} <br>`
+            r1 += `${aa} <br>  현재전적`;
+            r1 += `승 :  ${win} / 무 : ${draw} / 패 : ${lose}`;
+            r1 += `승률 : ${winRate}`;
+
+            document.getElementById('result').innerHTML = r1;
+        }
+
+
+        //승률 계산
+        function getWinRate() {
+            let winRate = 0;
+            // (이긴 횟수/ 전체경기수)*100
+            (win !== 0) ? winRate = (win / (win + draw + lose) * 100) : winRate = 0;
+            return Math.round(winRate);
+        }
+
+
+    </script>
+</body>
+
+</html>

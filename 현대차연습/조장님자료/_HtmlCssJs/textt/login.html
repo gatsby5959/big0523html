@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+ 
+ background-color: rgba(142, 176, 221, 0.153);
+
+
+}
+
+   #title {
+        text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: rgba(88, 109, 136, 0.865); 
+        border-radius: 25px; 
+        width: 200px; 
+        height: 60px;
+        line-height: 60px;
+        margin: 0 auto;
+font-size: 40px;
+background-color: rgb(210,184,223);
+       margin-top: 5%;
+      }
+
+      .sign{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: rgba(214, 183, 217, 0.225);
+            justify-content: center;
+        width: 800px;
+        height: 500px;
+font-size: 30px;
+     text-align: center;
+     line-height: 30px;
+     color:  rgb(142,176,221);
+     text-align: center;
+   
+        margin: 0 auto;
+        line-height: 150px;
+        
+      }
+
+      #check{
+
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+
+      }
+    
+
+    input {
+    border: none;
+    outline: none;
+    height: 35px;
+    width:300px;
+    font-size: 26px;
+    color:  rgb(142,176,221);
+    background-color:  rgba(214, 183, 217, 0.167);
+
+}
+
+#id{
+    margin-top: 90px;
+}
+    
+#login__s_s{
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+
+}
+
+#login_s{
+        color: rgb(142,176,221);
+background-color: none;
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 30px;
+margin: 20px;
+
+    }
+
+
+    </style>
+</head>
+<body>
+
+        
+        <h1 id="title">로그인</h1>
+        <div class="sign">
+        <input type="text" placeholder="id" id="id"><br>
+        <input type="password" placeholder="password" id="password"><br>
+        <button type="button" onclick="login()" id="login_s">로그인</button>
+            <button type="button" onclick="sign()" id="login__s_s">회원이 아니신가요?</button>
+   
+    </div>
+
+    <script>
+   
+        function login() {
+            const user = document.getElementById("id").value;
+            const password = document.getElementById("password").value;
+
+            if (user === "user" && password === "password") {
+
+                
+                window.location.replace("03_과제.html");
+            } else {
+               alert("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        function sign(){
+            window.location.assign("sign_in_c.html");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StringMethod</title>
+</head>
+
+<body>
+    <h1>
+        가장 많이 다루는 데이터 타입 : String
+    </h1>
+
+    <ul>
+        <li>
+            문자열 데이터는 index(0부터 시작)를 가지고 있음.
+        </li>
+        <li>
+            문자열 값 내에서 개행(br태그)하는 것을 추천하지 않는다.
+        </li>
+        <li>
+            new String() : 객체 타입으로 선언은 가능 / 추천 하지 않는다.
+        </li>
+        <li>
+            length : 문자열의 총길이를 나타낼때 사용
+        </li>
+
+    </ul>
+
+    <ul>
+        <li>
+            문자열 관련 메소드 : java에서 사용하는 String 메소드와 매우 유사
+        </li>
+        <li>
+            추출 관련 메소드 : substring(), substr(), slice()
+        </li>
+        <li>
+            문자 대체 메소드 : replace(old, new) : 첫번째 매칭되는 문자만, 대소문자 구분
+        </li>
+        <li>
+            trim() : 양쪽 공백 제거
+        </li>
+        <li>
+            [앞쪽] padStart(길이, 채울문자) / [뒷쪽] padEnd(길이, 채울문자)
+            ex) 주민등록번호 뒤에 가리는 용도, 주소 가릴때, 익명성이 필요할때
+        </li>
+        <li>
+            charAt(index) : 해당 index 문자 추출
+        </li>
+        <li>
+            indexOf("str") : 해당 문자열의 위치 반환
+        </li>
+        <li>
+            startWith("str") / endWith("str") : 해당 문자열이 앞 / 뒤에 존재하는지 확인하는 메소드
+            return 타입 => true / false
+        </li>
+    </ul>
+
+    <script>
+        let str1 = "Apple, Banana, Orange";
+        console.log(str1.slice(0, 5));
+        //slice는 substring과 사용방법이 같음.
+        console.log(str1.slice(-6));
+        //subString(startindex, endindex); // endindex는  포함안함
+        //substr(startindex, count);
+
+        //정규식 패턴을 사용할 수 있음.
+        //     /text/i (대소문자 구분없이 검색), /text/g (패턴과 일치하는 모든것)
+        let text = "Hello java World~!!";
+        let newText = text.replace(/JAVA/ig, "JavaScript"); //대소문자 구분x
+        console.log(newText);
+
+        let padText = "abc";
+        console.log(padText.padEnd(20, "-"));
+
+        //문제
+        let rNum = "000101-1234567";
+        let rNumLen = rNum.length;
+
+
+
+        let gender = 0;
+        if (rNum.charAt(7) == '1' || rNum.charAt(7) == '3') {
+            gender = '남자';
+        } else if (rNum.charAt(7) == '2' || rNum.charAt(7) == '4') {
+            gender = '여자';
+        } else {
+            gender = '정보없음';
+        }
+        console.log(gender);
+        console.log("--------------------------");
+
+        //파일명 추출
+
+        let fullFileName = "20230728_javascript.string_method.html";
+
+        function test(name) {
+            seach = name;
+            startLength = fullFileName.indexOf(name);
+            endLength = seach.length;
+            console.log(fullFileName.slice(startLength, startLength + endLength));
+        }
+
+        // String_method 추출
+        test('string_method');
+
+        // 작성자일자 추출
+        test('20230728');
+
+        // 확장자 추출
+        test('.html');
+
+
+
+
+    </script>
+</body>
+
+</html>

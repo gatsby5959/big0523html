@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인율 구하기</title>
+    <style>
+        body {
+            width: 300px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>할인율 계산기</legend>
+            가격 : <input type="text" id="price"> 원<br>
+            할인율 : <input type="text" id="sale"> %<br>
+
+            <button type="button" onclick="cal()">계산하기</button>
+
+
+        </fieldset>
+
+
+
+
+    </form>
+
+    <h3 id="info"></h3>
+
+
+    <script>
+        // 가격과 할인율을 입력받아 할인금액과 지불금액을 구하시오.
+        // ex) 50000원 5%할인 할인금액 : 2500 지불금액 : 47500
+
+        function cal() {
+            let price = document.getElementById('price').value;
+            let sale = document.getElementById('sale').value;
+
+            price = parseInt(price);
+            sale = parseInt(sale);
+            let salePrice = price * (sale / 100); //할인금액
+
+            let sumPrice = price - salePrice;   //지불금액
+
+            document.getElementById('info').innerText =
+                `할인금액: ${salePrice}
+                지불금액: ${sumPrice}`;
+
+        }
+
+    </script>
+</body>
+
+</html>

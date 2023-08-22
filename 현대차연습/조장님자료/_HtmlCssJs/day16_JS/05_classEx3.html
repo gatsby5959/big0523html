@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        console.log("----- 예 제  ------")
+
+        //class User 생성
+        //생성자로 name, birth를 받아서
+
+
+        const today = new Date();
+        let birthday = '';
+
+        class User {
+
+            constructor(name, birth) {
+                birthday = new Date(birth);
+                this.name = name;
+                this.birth = birth;
+            }
+
+
+            get ageInfo() {
+
+
+                if (this.status() > 19) {
+                    return `성인 입니다.`;
+                } else {
+                    return `미성년자 입니다.`;
+                }
+
+            }
+            //age
+            status() {
+                let age = today.getFullYear() - birthday.getFullYear() + 1;
+                return age;
+            }
+
+        }
+        let person = new User('김', '1992-08-30');
+        console.log(person.ageInfo);
+        console.log(person.status());
+
+
+
+    </script>
+
+</body>
+
+</html>

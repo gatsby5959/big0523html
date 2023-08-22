@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>과제</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <style>
+        ul {
+
+            text-align: center;
+            list-style-type: none;
+
+        }
+
+        li {
+
+            display: inline-block;
+            margin: 50px;
+            font-size: 50px;
+        }
+
+        .font1 {
+
+            width: 300px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 100px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+
+        a {
+            text-decoration-line: none;
+            width: 200px;
+            text-align: center;
+        }
+
+
+        a:visited {
+            color: black;
+        }
+
+
+        .im {
+            display: block;
+            margin: auto;
+            text-align: center;
+            text-decoration-line: none;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="font1">
+        <a href="/day03/10_과제_main.html" target="_self">
+            <div>Travel</div>
+    </div>
+    </a>
+    <ul>
+        <li><a id="서울" onclick="clickCity(this)" target="_self"><i class="bi bi-airplane"></i>서울</a></li>
+
+        <li><a id="도쿄" onclick="clickCity(this)" target="_self"><i class="bi bi-airplane"></i>도쿄</a></li>
+
+        <li><a id="프라하" onclick="clickCity(this)" target="_self"><i class="bi bi-airplane"></i>프라하</a></li>
+
+        <li> <a id="베를린" onclick="clickCity(this)" target="_self"><i class="bi bi-airplane"></i>베를린</a></li>
+
+        <li> <a id="워싱턴DC" onclick="clickCity(this)" target="_self"><i class="bi bi-airplane"></i>워싱턴DC</a></li>
+    </ul>
+
+
+    <img id="cityImg" src=" /image/44.jpg" alt="Home" width="700px" height="500px">
+
+
+
+    <script>
+        const clickCity = (elem) => {
+            console.log(elem);
+            console.log(elem.id);
+            let idVal = elem.id;
+            document.getElementById('cityImg').src = `/image/${idVal}.jpg`
+        }
+    </script>
+</body>
+
+</html>

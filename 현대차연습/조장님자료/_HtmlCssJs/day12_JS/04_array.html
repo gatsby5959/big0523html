@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        자바스크립트의 배열은 유동배열 : 크기, 데이터 변경이 가능
+    </h1>
+    <ul>
+        <li>
+            const myArray = [1,2,`a`,`b`,3];
+        </li>
+        <li>
+            배열의 데이터 타입은 같게 만드는게 룰
+        </li>
+        <li>
+            myArray=[]; 초기값이 없는 빈 배열을 만든 후 데이터를 추가하여 사용
+        </li>
+        <li>
+            index를 가짐 => 0번지부터 시작
+        </li>
+        <li>
+            length(길이) : 총길이 확인가능
+        </li>
+
+
+    </ul>
+
+    <ul>
+        <li>
+            for of : 배열안의 내용을 탐색할 때 사용 [ ]
+            for(let value of Array){
+            코드;
+            }
+        </li>
+        <li>
+            for in : 객체 안의 내용을 탐색할 때 사용 { }
+            for(let value in Object){
+            코드;
+            }
+        </li>
+
+    </ul>
+
+
+    <script>
+
+        // const myArray = new Array('a',1,2); // 가능은하지만 잘 사용하지 않음;
+        const myArray = ['a', 'b', 'c', 1, 2, 3];
+        console.log(myArray);   //배열 전부 출력
+        console.log(myArray.length);    //배열의 길이
+        console.log(myArray[0]);    //배열의 요소 출력
+        console.log(myArray[myArray.length - 1]);   //마지막 요소 출력
+        myArray[myArray.length] = 6;
+        console.log(myArray);
+
+        // 'add' 배열의 마지막에 추가 
+        myArray[myArray.length] = 'add';
+        console.log(myArray); //현재 index가 7번까지 와있는상황
+        myArray[9] = 1;
+        console.log(myArray[8]); //비어있는 요소는 undefined로 출력
+
+        //const로 배열을 선언하게 되면 배열의 값은 변경가능하나, 배열 자체를 변경 할 수 없음.
+        // 만약 배열의 초기화 or 다른 배열로 교체해야 할 때 필요한 로직은 let으로 선언 가능.
+
+        //배열 안의 값들을 출력(탐색)
+        for (let i = 0; i < myArray.length; i++) {
+            console.log(myArray[i]);
+        }
+
+        //유사 배열(연관배열) : associative Array
+        let associativeType = [1, true, 'hong', undefined, { k: 'value' }, ['k', 'g']];
+        console.log(associativeType);
+        for (let i = 0; i < associativeType.length; i++) {
+            console.log(associativeType[i]);
+            if (i == 4) {
+                console.log(associativeType[i].k);
+            } else {
+                console.log(associativeType[i]);
+            }
+        }
+
+
+        //향상된 for문 사용법
+        console.log("------------");
+        for (let a of myArray) {
+            console.log(a);
+        }
+        console.log("------------");
+        for (let a of associativeType) {
+            console.log(a);
+        }
+    </script>
+</body>
+
+</html>

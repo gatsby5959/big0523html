@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Up Down Game</h1>
+
+    <button type="button" onclick="start()">랜덤 숫자 생성 버튼</button>
+    <button type="button" onclick="window.location.reload()">다시 시도</button>
+
+    <h3 id="play">
+
+
+    </h3>
+    <input type="text" id="player">
+    <button type="button" onclick="pick()">정답!!</button>
+</body>
+
+
+<script>
+    let turn = 0;
+    let com = 0;
+    let player = 0;
+
+    function pick() {
+        player = document.getElementById('player').value;
+        console.log(player);
+        if (turn == 5) {
+            document.getElementById('play').innerHTML = `기회를 모두 사용하였습니다 다시하기 눌러주세요.`;
+            return 0;
+        }
+
+        turn++;
+        document.getElementById('play').innerHTML = `${turn}회 도전 <br>`;
+
+
+        if (com > player) {
+            document.getElementById('play').innerHTML += 'UP' + '<br>';
+        } else if (com < player) {
+            document.getElementById('play').innerHTML += 'DOWN' + '<br>';
+        } else {
+            document.getElementById('play').innerHTML += '정답!' + '<br>';
+        }
+
+    }
+
+
+    function start() {
+        com = Math.floor(Math.random() * 99) + 1;
+        document.getElementById('play').innerHTML = '컴퓨터가 랜덤 숫자를 생성하였습니다.'
+        turn = 0;
+        console.log(com);
+    }
+
+
+
+
+</script>
+
+
+</html>
