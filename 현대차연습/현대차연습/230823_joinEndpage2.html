@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Document</title>
+    <style>
+        @font-face { /*현대 하모니 폰트 다운 받고 3개 인스톨후  @구문 추가해봣음*/
+        font-family: '현대하모니+L';
+        src: url('fonts/현대하모니+L.ttf') format('truetype');
+        }
+        body {
+        font-family: '현대하모니+L', Nanum Gothic, sans-serif, Roboto, Helvetica, Arial;
+        text-align: center;
+        margin: 0px;
+        /* 아래 두 줄을 추가하여 전체 화면을 flex container로 만들고 항목들을 중앙으로 정렬 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 상단 파란색 바 */
+    .blue-bar {
+        background-color: rgb(0, 0, 87);
+        height: 6px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .div0{
+        height: 20px;
+        width: 100%;
+    }
+
+    .div1 {
+        margin-top: 25px;
+        display: flex; /* 이 줄을 추가하여 .div1을 flex container로 만듬 */
+        justify-content: center; /* 중앙 정렬 */
+
+        width: 100%;
+    }
+
+    #logo {
+        flex-grow: 0;
+        max-width: 25%;
+        flex-basis: 25%;
+        width: calc(100% + 24px);
+        display: block;
+        margin-left: -600px;
+
+    }
+
+    #imglogo {
+        max-width: 140px;
+        padding: auto;
+
+    }
+
+    #div2{
+        height: 70px;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
+    #div2txt1 {
+        font-size: 25px;
+        font-weight: 800;
+        margin: 20px 0px 20px 0px;
+    }
+
+    #div2txt2 {
+        margin: 20px 0px 130px 0px;
+        /* color: brown; */
+    }
+    #divhr{
+        margin: 20px 0px 0px 0px;
+        width: 100%;
+    }
+    #btns{
+        width: 70%;
+        display: inline-block;
+        margin: 0px 0px 0px 0px;
+    }
+    #divbtn{
+            width: 200px;
+            height: 100px;
+            
+            display: inline-block;
+            margin-left: 5px;
+        margin-right: 5px;
+        }
+    .btn-input {
+        width: 200px;
+        height: 55px;
+        /* box-sizing: border-box; */
+        margin-bottom: 20px;
+        background-color: rgb(40, 120, 194);
+        border-radius: 1px;
+        border: 0;
+        cursor: pointer;
+        color: whitesmoke;
+        font-size: 17px;
+        font-weight: 900;
+        display: inline-block;
+
+    }
+    #checkicon{
+        margin: 100px 0px 50px 0px;
+    }
+    .material-symbols-outlined{
+        width: 200px;
+        height: 200px;
+        font-size: 200px;
+    }
+
+    </style>
+</head>
+<body>
+<!-- 상단 파란색 바 추가 -->
+<div class="blue-bar"></div>
+
+<div class="div0">
+<div class="div1">
+    <div id="logo">
+        <!-- 현대차 로고 -->
+        <img id = "imglogo" src="https://d3337ehzyte0uu.cloudfront.net/static/media/hyundai_logo.png" alt="HYUNDAI">
+    </div>
+</div>
+</div>
+
+<br>
+<div id="divhr">
+    <hr>
+</div>
+
+<div id = "div2">
+    <div id="div2txt1">가입성공</div>
+    <div id="div2txt2">회원가입에 성공하였습니다.</div>
+</div>
+
+<div id = checkicon>
+    <span class="material-symbols-outlined">
+    check_circle
+    </span>
+</div>
+
+<div id="btns">
+    <div id = "divbtn">
+        <a href="http://www.naver.com">
+        <button type="submit" class="btn-input">메인페이지</button>
+        </a>
+    </div>
+    <div id = "divbtn">
+        <a href="http://www.daum.net">
+        <button type="submit" class="btn-input">로그인</button>
+        </a>
+    </div>
+</div>
+
+
+
+</body>
+</html>
